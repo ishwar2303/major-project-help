@@ -30,6 +30,15 @@ Paste in auto activation triggers for java: abcdefghijklmnopqrstuvwxyzABCDEFGHIJ
 16. Finish
 ```
 
+### Open View
+```
+Window > Show View > Select your option
+
+For example 
+How to open project explorer
+Window > Show View > Project Explorer
+```
+
 # Maven Dependencies
 
 ### Servlet Jar
