@@ -10,7 +10,7 @@ https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/src/apache-tomcat-9.0.56-src.zi
 ## Download MySQL Installer
 https://cdn.mysql.com//Downloads/MySQLInstaller/mysql-installer-community-8.0.27.1.msi
 
-## Maven Dependency
+## Maven Dependencies
 
 ### Servlet Jar
 ```
