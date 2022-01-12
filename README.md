@@ -23,6 +23,16 @@ https://cdn.mysql.com//Downloads/MySQLInstaller/mysql-installer-community-8.0.27
 </dependency>
 ```
 
+### MySQL Connector Jar
+```
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.27</version>
+</dependency>
+```
+
 ### Mail Jar
 ```
 <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
