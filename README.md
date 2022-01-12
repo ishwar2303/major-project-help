@@ -2,8 +2,23 @@
 
 ## Download Eclipse IDE
 
-(https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-ide-enterprise-java-and-web-developers)
+https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-ide-enterprise-java-and-web-developers
 
 ## Download Tomcat Apache
-(https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/src/apache-tomcat-9.0.56-src.zip)
+https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/src/apache-tomcat-9.0.56-src.zip
+
+## Download MySQL Installer
+https://cdn.mysql.com//Downloads/MySQLInstaller/mysql-installer-community-8.0.27.1.msi
+
+## Maven Dependency
+
+```
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>3.0-alpha-1</version>
+    <scope>provided</scope>
+</dependency>
+```
 
