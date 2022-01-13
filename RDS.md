@@ -66,6 +66,7 @@ question
 answer
 score
 negativeMarking
+imageAvailable
 ```
 
 #### Question related images on AWS S3
@@ -78,19 +79,12 @@ bucketName/adminId/examId/sectionId/questionId/image#.extension
 optionId
 questionId
 option
+imageAvailable
 ```
 
 #### ObjectiveOption relatd images on AWS S3
 ```
 bucketName/adminId/examId/sectionId/questionId/optionId/image#.extension
-```
-
-### Table: StudentReport
-```
-reportId
-studentId
-questionId
-status
 ```
 
 ### Table: RegisteredStudent
@@ -103,5 +97,12 @@ contact
 password
 ```
 
-
+### Table: StudentReport
+```
+reportId
+studentId
+questionId
+selectedOption
+timeTaken
+```
 
