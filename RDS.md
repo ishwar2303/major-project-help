@@ -56,6 +56,7 @@ examId
 title
 description
 difficultyLevel
+shuffle
 ```
 
 ### Table: Question
