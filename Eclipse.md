@@ -111,3 +111,27 @@ Window > Show View > Project Explorer
     <version>1.12.138</version>
 </dependency>
 ```
+
+### WebCam
+```
+<!-- https://mvnrepository.com/artifact/com.nativelibs4java/bridj -->
+<dependency>
+    <groupId>com.nativelibs4java</groupId>
+    <artifactId>bridj</artifactId>
+    <version>0.7.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture -->
+<dependency>
+    <groupId>com.github.sarxos</groupId>
+    <artifactId>webcam-capture</artifactId>
+    <version>0.3.12</version>
+</dependency>
+```
