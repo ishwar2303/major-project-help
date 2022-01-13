@@ -5,7 +5,7 @@
 ```
 Mac: Eclipse > Preferences > JAVA > Content Assist 
 Windows: Window > Preferences > JAVA > Content Assist
-Paste in auto activation triggers for java: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._
+Paste `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._` in auto activation triggers for java
 
 ```
 
