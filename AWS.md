@@ -24,42 +24,29 @@ secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
 ```json
 {
     "Version": "2012-10-17",
-    "Id": "Policy1641194937057",
     "Statement": [
         {
-            "Sid": "GetObject",
+            "Sid": "statement1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "*"
+                "AWS": "arn:aws:iam::578660611254:user/mp2022"
             },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::major-project-2022/*"
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::major-project-2022"
         },
         {
-            "Sid": "PutObject",
+            "Sid": "statement2",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "*"
+                "AWS": "arn:aws:iam::578660611254:user/mp2022"
             },
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::major-project-2022/*"
-        },
-        {
-            "Sid": "DeleteObject",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:DeleteObject",
-            "Resource": "arn:aws:s3:::major-project-2022/*"
-        },
-        {
-            "Sid": "GetObjectAcl",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:GetObjectAcl",
+            "Action": [
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
             "Resource": "arn:aws:s3:::major-project-2022/*"
         }
     ]
