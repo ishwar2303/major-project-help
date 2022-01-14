@@ -37,25 +37,25 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 
 public class S3 {
+
 	public static String BUCKET = "major-project-2022";
 	
 	public static void uploadFile(String fileName, InputStream inputStream) throws S3Exception, AwsServiceException, SdkClientException, IOException {
 		AWSCredentials cred = new AWSCredentials();
 		AwsBasicCredentials AwsCred = cred.credentials();
 
-    	Properties props = System.getProperties();
-    	props.setProperty("aws.region", "ap-south-1");
-        S3Client client = S3Client.builder().region(null)
+		Properties props = System.getProperties();
+		props.setProperty("aws.region", "ap-south-1");
+		S3Client client = S3Client.builder().region(null)
                 .credentialsProvider(StaticCredentialsProvider.create(AwsCred))
                 .build();
         
-        PutObjectRequest request = PutObjectRequest.builder()
+        	PutObjectRequest request = PutObjectRequest.builder()
                                 .bucket(BUCKET)
                                 .key(fileName)
                                 .acl("public-read-write")
                                 .build();
-        client.putObject(request,
-                RequestBody.fromInputStream(inputStream, inputStream.available()));
+        	client.putObject(request, RequestBody.fromInputStream(inputStream, inputStream.available()));
 		
 		
 	}
@@ -64,8 +64,8 @@ public class S3 {
 		AWSCredentials cred = new AWSCredentials();
 		AwsBasicCredentials AwsCred = cred.credentials();
 
-    	Properties props = System.getProperties();
-    	props.setProperty("aws.region", "ap-south-1");
+		Properties props = System.getProperties();
+		props.setProperty("aws.region", "ap-south-1");
 		S3Client client = S3Client.builder()
 				.region(null)
 				.credentialsProvider(StaticCredentialsProvider.create((AwsCred)))
