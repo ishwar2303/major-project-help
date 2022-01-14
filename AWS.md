@@ -20,7 +20,9 @@ accessKeyId: AKIAYNOW4GS3HVIMI45F
 secretAccessKey: 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
 ```
 
-## S3 | Bucket: major-project-2022 | Policy
+## S3 | Bucket: major-project-2022 
+
+### Bucket Policy
 ```json
 {
     "Version": "2012-10-17",
@@ -51,4 +53,8 @@ secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
         }
     ]
 }
+```
+
+### User Policy
+```json
 ```
