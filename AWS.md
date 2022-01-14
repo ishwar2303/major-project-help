@@ -15,9 +15,10 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-manag
 ```
 Permissions: {
   1: AmazonS3FullAccess
+  2: AdministratorAccess
 }
-accessKeyId: AKIAYNOW4GS3HVIMI45F
-secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
+accessKeyId: AKIAYNOW4GS3IOLYOGNE
+secretAccessKey: 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
 ```
 
 ## S3 | Bucket: major-project-2022 
@@ -31,7 +32,7 @@ secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
             "Sid": "statement1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::578660611254:user/mp2022"
+                "AWS": "AIDAYNOW4GS3KCLVIOZNW"
             },
             "Action": [
                 "s3:GetBucketLocation",
@@ -43,11 +44,12 @@ secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
             "Sid": "statement2",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::578660611254:user/mp2022"
+                "AWS": "AIDAYNOW4GS3KCLVIOZNW"
             },
             "Action": [
                 "s3:GetObject",
-                "s3:DeleteObject"
+                "s3:DeleteObject",
+                "s3:PutObject"
             ],
             "Resource": "arn:aws:s3:::major-project-2022/*"
         }
@@ -55,6 +57,3 @@ secretAccessKey: iNNPh2uq2ITgXcr9DnPqdPho4F6H/pMKc6N6tNkT
 }
 ```
 
-### User Policy
-```json
-```
