@@ -8,6 +8,9 @@ Username: ishwar2303
 Password: 23031999
 ```
 
+### Source
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-managing-access-example1.html
+
 ## IAM | User: mp2022
 ```
 Permissions: {
