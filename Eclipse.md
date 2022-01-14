@@ -92,23 +92,25 @@ Window > Show View > Project Explorer
 </dependency>
 ```
 
-### AWS SDK
-```
-<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
-<dependency>
-    <groupId>com.amazonaws</groupId>
-    <artifactId>aws-java-sdk</artifactId>
-    <version>1.12.131</version>
-</dependency>
-```
-
 ### AWS S3
 ```
-<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>bom</artifactId>
+            <version>2.15.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+```
 <dependency>
-    <groupId>com.amazonaws</groupId>
-    <artifactId>aws-java-sdk-s3</artifactId>
-    <version>1.12.138</version>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>s3</artifactId>
 </dependency>
 ```
 
