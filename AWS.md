@@ -8,4 +8,8 @@ Username: ishwar2303
 Password: 23031999
 ```
 
-
+## AWS IAM | User: mp2022
+```
+accessKeyId: AKIAYNOW4GS3HVIMI45F
+secretAccessKey: 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
+```
