@@ -33,7 +33,7 @@ secretAccessKey: 0vjwIbHPeA9mG817wiB+FKWa2Ej9E1QKu6KOyD3C
             "Sid": "statement1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "AIDAYNOW4GS3KCLVIOZNW"
+                "AWS": "arn:aws:iam::578660611254:user/mp2022"
             },
             "Action": [
                 "s3:GetBucketLocation",
@@ -45,7 +45,7 @@ secretAccessKey: 0vjwIbHPeA9mG817wiB+FKWa2Ej9E1QKu6KOyD3C
             "Sid": "statement2",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "AIDAYNOW4GS3KCLVIOZNW"
+                "AWS": "arn:aws:iam::578660611254:user/mp2022"
             },
             "Action": [
                 "s3:GetObject",
