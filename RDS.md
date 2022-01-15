@@ -43,9 +43,10 @@ title
 description
 difficultyLevel
 startTime
-endTime
 windowDuration
+duration
 createdOn
+navigation
 isDeleted
 ```
 
@@ -61,24 +62,35 @@ shuffle
 
 ### Table: Question
 ```
-questionId
-sectionId
+questionId (PK)
+sectionId (FK)
+questionTypeId (FK)
 question
-answer
 score
-negativeMarking
-imageAvailable
+negative
 ```
 
 #### Question related images on AWS S3
 ```
 bucketName/adminId/examId/sectionId/questionId/image#.extension
 ```
+### Table: QuestionType
+```
+questionTypeId (PK)
+type
+```
+
+### Table: Answer
+```
+answerId (PK)
+questionId (FK)
+answer
+```
 
 ### Table: ObjectiveOption
 ```
-optionId
-questionId
+optionId (PK)
+questionId (FK)
 option
 imageAvailable
 ```
@@ -86,6 +98,14 @@ imageAvailable
 #### ObjectiveOption relatd images on AWS S3
 ```
 bucketName/adminId/examId/sectionId/questionId/optionId/image#.extension
+```
+
+### Table: Images
+```
+imageId (PK)
+title
+description
+objectKey
 ```
 
 ### Table: RegisteredStudent
@@ -104,6 +124,7 @@ reportId
 studentId
 questionId
 selectedOption
+subjectiveAnswer
 timeTaken
 ```
 
