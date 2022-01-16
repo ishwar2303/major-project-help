@@ -14,16 +14,6 @@ Username: mpstudent2022
 Password:
 ```
 
-## Tables
-```
-1. Admin
-2. Exam
-3. Section
-4. Question
-5. Option
-6. RegisteredStudent
-```
-
 #### Table: Admin
 ```
 adminId (PK)
