@@ -99,62 +99,46 @@ score
 negative
 ```
 
-
-#### Question related images on AWS S3
+### Table: QuestionImages
 ```
-bucketName/adminId/examId/sectionId/questionId/image#.extension
-```
-### Table: QuestionType
-```
-questionTypeId (PK)
-type
+imageId (PK)
+questionId (FK)
+description
+path
 ```
 
-### Table: Answer
+### Table: Option
+```
+optionId (PK)
+questionId (FK)
+description
+```
+
+### Table: OptionImages
+```
+imageId (PK)
+optionId (FK)
+description
+path
+```
+
+### Table: McqAnswers
+```
+answerId (PK)
+questionId (FK)
+optionId (FK)
+```
+
+### Table: TrueFalseAnswers
 ```
 answerId (PK)
 questionId (FK)
 answer
 ```
 
-### Table: ObjectiveOption
+### Table: OneWordAnswers
 ```
-optionId (PK)
+answerId (PK)
 questionId (FK)
-option
-imageAvailable
+answer
 ```
-
-#### ObjectiveOption relatd images on AWS S3
-```
-bucketName/adminId/examId/sectionId/questionId/optionId/image#.extension
-```
-
-### Table: Images
-```
-imageId (PK)
-title
-description
-objectKey
-```
-
-### Table: RegisteredStudent
-```
-studentId
-firstName
-lastName
-email
-contact
-password
-```
-
-### Table: StudentReport
-```
-reportId
-studentId
-questionId
-selectedOption
-subjectiveAnswer
-timeTaken
-```
-
