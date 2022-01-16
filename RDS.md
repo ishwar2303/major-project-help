@@ -26,11 +26,12 @@ Password:
 
 #### Table: Admin
 ```
-adminId
+adminId (PK)
 firstName
 lastName
 email
 contact
+dateOfBirth
 password
 approved
 ```
@@ -44,9 +45,10 @@ description
 difficultyLevel
 startTime 
 windowDuration
-duration
+examTimer
+sectionTimer
+sectionNavigation
 createdOn
-navigation
 isDeleted
 ```
 
@@ -57,19 +59,46 @@ examId (FK)
 title
 description 
 difficultyLevel
-navigation
-shuffle
+questionNavigation
+sectionTimer
+questionTimer
+```
+
+### Table: QuestionCategory
+```
+questionCategoryId (PK)
+categoryCode
+description
+
+categoryCode description
+MCQ          Multiple Choice Question => Single Correct | Multiple Correct
+TF           True or False
+OWA          One Word Answer
+PGM          Programming | Coding
+```
+### Table: QuestionSubCategory
+```
+questionSubCategoryId (PK)
+questionCategoryId (FK)
+subCategoryCode
+description
+
+subCategoryCode description
+SC              Single Correct
+MC              Multiple Correct
 ```
 
 ### Table: Question
 ```
 questionId (PK)
 sectionId (FK)
-questionTypeId (FK)
+questionCategoryId (FK)
 question
+questionTimer
 score
 negative
 ```
+
 
 #### Question related images on AWS S3
 ```
