@@ -16,7 +16,7 @@ Password:
 
 ## Tables
 ```
-1. RegisteredAdmin
+1. Admin
 2. Exam
 3. Section
 4. Question
@@ -24,7 +24,7 @@ Password:
 6. RegisteredStudent
 ```
 
-#### Table: RegisteredAdmin
+#### Table: Admin
 ```
 adminId
 firstName
@@ -37,12 +37,12 @@ approved
 
 ### Table: Exam
 ```
-examId
-adminId
+examId (PK)
+adminId (FK)
 title
 description
 difficultyLevel
-startTime
+startTime 
 windowDuration
 duration
 createdOn
@@ -52,11 +52,12 @@ isDeleted
 
 ### Table: Section
 ```
-sectionId
-examId
+sectionId (PK)
+examId (FK)
 title
-description
+description 
 difficultyLevel
+navigation
 shuffle
 ```
 
