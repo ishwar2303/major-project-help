@@ -95,6 +95,8 @@ imageId (PK)
 questionId (FK)
 description
 path
+
+AWS S3 Path: admin/question/questionId/file
 ```
 
 ### Table: Option
@@ -110,6 +112,8 @@ imageId (PK)
 optionId (FK)
 description
 path
+
+AWS S3 Path: admin/option/optionId/file
 ```
 
 ### Table: McqAnswers
