@@ -136,3 +136,23 @@ answerId (PK)
 questionId (FK)
 answer
 ```
+
+### Table: Student
+```
+studentId (PK)
+firstName
+lastName 
+email
+contact
+dateOfBirth
+institution
+password
+```
+
+### Table: SubjectInterest
+```
+interestId (PK)
+studentId (FK)
+code
+description
+```
