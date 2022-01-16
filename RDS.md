@@ -61,7 +61,7 @@ categoryCode
 description
 
 categoryCode description
-MCQ          Multiple Choice Question => Single Correct | Multiple Correct
+MCQ          Multiple Choice Question
 TF           True or False
 OWA          One Word Answer
 PGM          Programming | Coding
