@@ -8,7 +8,6 @@ Windows: Window > Preferences > JAVA > Content Assist
 Paste `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._` in auto activation triggers for java
 
 ```
-new changes
 
 ### Add Server Runtime
 ```
