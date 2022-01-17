@@ -39,6 +39,7 @@ examTimer
 sectionTimer
 sectionNavigation
 createdOn
+isActive
 isDeleted
 ```
 
