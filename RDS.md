@@ -42,6 +42,7 @@ createdOn
 attempts
 autoProctored
 visibility
+result
 isActive
 isDeleted
 ```
