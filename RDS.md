@@ -121,25 +121,35 @@ path
 AWS S3 Path: admin/option/optionId/file
 ```
 
-### Table: McqAnswers
+### Table: McqAnswer
 ```
 answerId (PK)
 questionId (FK)
 optionId (FK)
 ```
 
-### Table: TrueFalseAnswers
+### Table: TrueFalseAnswer
 ```
 answerId (PK)
 questionId (FK)
 answer
 ```
 
-### Table: OneWordAnswers
+### Table: OneWordAnswer
 ```
 answerId (PK)
 questionId (FK)
 answer
+```
+
+### Table: CodingAnswer
+```
+answerId (PK)
+questionId (FK)
+output
+path
+
+AWS S3 Path: admin/exam/coding/questionId/output/file
 ```
 
 ### Table: Student
