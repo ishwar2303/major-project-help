@@ -28,7 +28,7 @@ approved
 
 ### Table: Exam
 ```
-examId (PK)
+examId (PK
 adminId (FK)
 title
 description
@@ -39,6 +39,9 @@ examTimer
 sectionTimer
 sectionNavigation
 createdOn
+attempts
+autoProctored
+visibility
 isActive
 isDeleted
 ```
@@ -150,10 +153,69 @@ institution
 password
 ```
 
-### Table: SubjectInterest
+### Table: StudentDocument
+```
+documentId (PK)
+studentId (FK)
+documentCategoryId (FK)
+path
+
+AWS S3 Path: student/document/documentId/file
+```
+
+
+### Table: Interest
 ```
 interestId (PK)
-studentId (FK)
 code
 description
 ```
+
+### Table: Skill
+```
+skillId
+code
+description
+```
+
+### Table: StudentSkill
+```
+studentSkillId (PK)
+skillId (FK)
+studentId (FK)
+```
+
+### Table: ExamRegistration
+```
+registrationId (PK)
+studentId (FK)
+examId (FK)
+approved
+```
+
+### Table: StudentPhotoForRecognition
+```
+recognitionId (PK)
+registrationId (FK)
+path
+
+AWS S3 Path: student/recognition/dataset/studentId/file
+```
+
+### Table: RecognitoinClasse
+```
+classId (PK)
+code
+description
+```
+
+### Table: StudentExamRecognitionLog
+```
+recognitionLogId (PK)
+registrationId (FK)
+classId (FK)
+path
+
+AWS S3 Path: student/recognition/log/studentId/file
+```
+
