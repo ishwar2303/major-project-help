@@ -163,17 +163,9 @@ path
 AWS S3 Path: student/document/documentId/file
 ```
 
-
-### Table: Interest
-```
-interestId (PK)
-code
-description
-```
-
 ### Table: Skill
 ```
-skillId
+skillId (PK)
 code
 description
 ```
@@ -202,7 +194,7 @@ path
 AWS S3 Path: student/recognition/dataset/studentId/file
 ```
 
-### Table: RecognitoinClasse
+### Table: RecognitionClass
 ```
 classId (PK)
 code
