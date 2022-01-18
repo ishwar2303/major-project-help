@@ -1,7 +1,7 @@
 # Major Project Help
 
 ## Index
-1. [Eclipse](https://github.com/ishwar2303/major-project-help/blob/main/Eclipse.md)
+1. [Eclipse](Eclipse.md)
 2. [Maven Dependencies](https://github.com/ishwar2303/major-project-help/blob/main/Maven-Dependencies.md)
 3. [AWS](https://github.com/ishwar2303/major-project-help/blob/main/AWS.md)
 4. [WebCam JavaScript](https://github.com/ishwar2303/major-project-help/blob/main/WebCam-JavaScript.md)
