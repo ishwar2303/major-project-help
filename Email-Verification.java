@@ -78,8 +78,8 @@ public class EmailVerification extends HttpServlet {
 	
 	public static String sendOtp(String to) {
 		String host = "smtp.gmail.com";
-		final String user = "ishwar2303@gmail.com";
-		final String password = "Baisla1999@";
+		final String user = "********";
+		final String password = "********";
 		String otpString = "";
 		Properties props = new Properties();
 		props.put("mail.smtp.host", host);
