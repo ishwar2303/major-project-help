@@ -2,13 +2,13 @@
 
 ## Index
 1. [Eclipse](Eclipse.md)
-2. [Maven Dependencies](https://github.com/ishwar2303/major-project-help/blob/main/Maven-Dependencies.md)
-3. [AWS](https://github.com/ishwar2303/major-project-help/blob/main/AWS.md)
-4. [WebCam JavaScript](https://github.com/ishwar2303/major-project-help/blob/main/WebCam-JavaScript.md)
-5. [React JS](https://github.com/ishwar2303/major-project-help/blob/main/React.md)
-6. [S3 JAVA Access](https://github.com/ishwar2303/major-project-help/blob/main/S3-Java-Access.md)
-7. [AWS RDS](https://github.com/ishwar2303/major-project-help/blob/main/RDS.md)
-
+2. [Maven Dependencies](Maven-Dependencies.md)
+3. [AWS](AWS.md)
+4. [WebCam JavaScript](WebCam-JavaScript.md)
+5. [React JS](React.md)
+6. [S3 JAVA Access](S3-Java-Access.md)
+7. [AWS RDS](RDS.md)
+8. [Main CSS](Main.css)
 
 ## Meet Link
 https://meet.google.com/tkp-hpfq-hkk
