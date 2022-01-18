@@ -10,6 +10,8 @@
 7. [AWS RDS](RDS.md)
 8. [Main CSS](Main.css)
 9. [Timer](Timer.js)
+10. [Email Verification](E-mail-Verification.java)
+11. [Generate OTP](OTP.java)
 
 ## Meet Link
 https://meet.google.com/tkp-hpfq-hkk
