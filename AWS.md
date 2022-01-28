@@ -2,10 +2,6 @@
 
 ## RDS | MySQL 
 ```
-Server: major-project-1.cdwsyqgpicda.ap-south-1.rds.amazonaws.com
-Port: 3306
-Username: ishwar2303
-Password: 23031999
 ```
 
 ### Source 
@@ -18,8 +14,6 @@ Permissions: {
   1: AmazonS3FullAccess
   2: AdministratorAccess
 }
-accessKeyId: AKIAYNOW4GS3IOLYOGNE
-secretAccessKey: 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
 ```
 
 ## S3 | Bucket: major-project-2022 
