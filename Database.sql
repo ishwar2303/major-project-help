@@ -1,6 +1,15 @@
+
 CREATE DATABASE `quizwit`;
 
 USE `quizwit`;
+
+CREATE TABLE `Gender` (
+	genderId INT NOT NULL AUTO_INCREMENT,
+    description VARCHAR(30),
+    PRIMARY KEY(genderId)
+);
+
+INSERT INTO `Gender` VALUES (NULL, 'Male'), (NULL, 'Female'), (NULL, 'Others');
 
 CREATE TABLE `Admin` (
     adminId INT NOT NULL AUTO_INCREMENT,
@@ -8,8 +17,12 @@ CREATE TABLE `Admin` (
     lastName VARCHAR(30),
     email VARCHAR(50) NOT NULL UNIQUE,
     contact BIGINT NOT NULL,
+    genderId INT NOT NULL,
+    institution VARCHAR(150),
+    dateOfBirth DATE NOT NULL,
     password VARCHAR(200) NOT NULL,
-    PRIMARY KEY(adminId)
+    PRIMARY KEY(adminId),
+    FOREIGN KEY(genderId) REFERENCES Gender(genderId)
 );
 
 CREATE TABLE `AdminImage` (
@@ -19,7 +32,3 @@ CREATE TABLE `AdminImage` (
     PRIMARY KEY(adminImageId),
     FOREIGN KEY(adminId) REFERENCES Admin(adminId)
 );
-
-INSERT INTO Admin VALUES (NULL, 'Ishwar', 'Baisla', 'ishwar2303@gmail.com', 9821671707, '12345678');
-INSERT INTO AdminImage VALUES (NULL, 'quizwit/admin/profilePhoto/adminId/ishwar.png', 1);
-SELECT * FROM Admin AS A INNER JOIN AdminImage AS AI ON A.adminId = AI.adminId WHERE A.adminId = 1;
