@@ -4,7 +4,7 @@ CREATE DATABASE `quizwit`;
 USE `quizwit`;
 
 CREATE TABLE `Gender` (
-	genderId INT NOT NULL AUTO_INCREMENT,
+    genderId INT NOT NULL AUTO_INCREMENT,
     description VARCHAR(30),
     PRIMARY KEY(genderId)
 );
@@ -26,9 +26,9 @@ CREATE TABLE `Admin` (
 );
 
 CREATE TABLE `AdminImage` (
-	adminImageId INT NOT NULL AUTO_INCREMENT,
+    adminImageId INT NOT NULL AUTO_INCREMENT,
     path VARCHAR(100) NOT NULL,
     adminId INT NOT NULL,
     PRIMARY KEY(adminImageId),
-    FOREIGN KEY(adminId) REFERENCES Admin(adminId)
+    FOREIGN KEY(adminId) REFERENCES Admin(adminId) ON DELETE CASCADE
 );
