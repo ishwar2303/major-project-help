@@ -1,4 +1,3 @@
-
 CREATE DATABASE `quizwit`;
 
 USE `quizwit`;
@@ -16,7 +15,7 @@ CREATE TABLE `Admin` (
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30),
     email VARCHAR(50) NOT NULL UNIQUE,
-    contact BIGINT NOT NULL,
+    contact VARCHAR(20) ,
     genderId INT NOT NULL,
     institution VARCHAR(150),
     dateOfBirth DATE NOT NULL,
@@ -31,4 +30,27 @@ CREATE TABLE `AdminImage` (
     adminId INT NOT NULL,
     PRIMARY KEY(adminImageId),
     FOREIGN KEY(adminId) REFERENCES Admin(adminId) ON DELETE CASCADE
+);
+
+
+CREATE TABLE `Student` (
+    studentId INT NOT NULL AUTO_INCREMENT,
+    firstName VARCHAR(30) NOT NULL,
+    lastName VARCHAR(30),
+    email VARCHAR(50) NOT NULL UNIQUE,
+    contact VARCHAR(20) ,
+    genderId INT NOT NULL,
+    institution VARCHAR(150),
+    dateOfBirth DATE NOT NULL,
+    password VARCHAR(200) NOT NULL,
+    PRIMARY KEY(studentId),
+    FOREIGN KEY(genderId) REFERENCES Gender(genderId)
+);
+
+CREATE TABLE `studentImage` (
+    studentImageId INT NOT NULL AUTO_INCREMENT,
+    path VARCHAR(100) NOT NULL,
+    studentId INT NOT NULL,
+    PRIMARY KEY(studentImageId),
+    FOREIGN KEY(studentId) REFERENCES student(studentId) ON DELETE CASCADE
 );
