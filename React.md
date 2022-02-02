@@ -10,3 +10,9 @@ npm start
 ```
 npm install react-router-dom
 ```
+
+```
+npm cache clean --force
+npm rebuild
+npm install
+```
