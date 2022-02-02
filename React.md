@@ -11,6 +11,7 @@ npm start
 npm install react-router-dom
 ```
 
+### Configure react app after fork from github
 ```
 npm cache clean --force
 npm rebuild
