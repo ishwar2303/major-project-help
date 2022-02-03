@@ -4,13 +4,13 @@
 
 ### User for Admin
 ```
-Username: mpadmin2022
+Username: admin
 Password:
 ```
 
 ### User for Student
 ```
-Username: mpstudent2022
+Username: student
 Password:
 ```
 
