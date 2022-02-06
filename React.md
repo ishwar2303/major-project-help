@@ -7,6 +7,7 @@ cd my-app
 npm start
 ```
 
+### Install modules
 ```
 npm install react-router-dom
 npm install jquery
@@ -20,4 +21,18 @@ npm install react-syntax-highlighter --save
 npm cache clean --force
 npm rebuild
 npm install
+```
+
+### Syntax highlighting
+```javascript
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+const Component = () => {
+  const codeString = '(num) => num + 1';
+  return (
+    <SyntaxHighlighter language="javascript" style={docco}>
+      {codeString}
+    </SyntaxHighlighter>
+  );
+};
 ```
