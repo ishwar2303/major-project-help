@@ -14,6 +14,7 @@ npm install jquery
 npm install crossfilter
 npm install highcharts
 npm install react-syntax-highlighter --save
+npm install react-ace ace-builds
 ```
 
 ### Configure react app after fork from github
@@ -35,4 +36,34 @@ const Component = () => {
     </SyntaxHighlighter>
   );
 };
+```
+
+### Ace Editor
+```javascript
+                    <AceEditor
+                        placeholder="Write your program here..."
+                        mode="c_cpp"
+                        theme="monokai"
+                        name="editor"
+                        onChange={fetchScriptFromEditor}
+                        fontSize={18}
+                        showPrintMargin={true}
+                        showGutter={true}
+                        highlightActiveLine={true}
+                        value={`// Hello World Program
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World";
+    return 0;
+}
+                        `}
+                        setOptions={{
+                        enableBasicAutocompletion: false,
+                        enableLiveAutocompletion: false,
+                        enableSnippets: false,
+                        showLineNumbers: true,
+                        tabSize: 2,
+                        }}/>
 ```
