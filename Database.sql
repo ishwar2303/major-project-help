@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.26, for macos11 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: quizwit
 -- ------------------------------------------------------
--- Server version	8.0.26
+-- Server version	8.0.27
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `AdministratorAvailedPlans`
+-- Table structure for table `administratoravailedplans`
 --
 
-DROP TABLE IF EXISTS `AdministratorAvailedPlans`;
+DROP TABLE IF EXISTS `administratoravailedplans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `AdministratorAvailedPlans` (
+CREATE TABLE `administratoravailedplans` (
   `availedId` bigint NOT NULL AUTO_INCREMENT,
   `planId` bigint NOT NULL,
   `administratorId` bigint NOT NULL,
@@ -31,28 +31,28 @@ CREATE TABLE `AdministratorAvailedPlans` (
   PRIMARY KEY (`availedId`),
   KEY `planId` (`planId`),
   KEY `administratorId` (`administratorId`),
-  CONSTRAINT `administratoravailedplans_ibfk_1` FOREIGN KEY (`planId`) REFERENCES `AdministratorSubscriptionPlans` (`planId`) ON DELETE CASCADE,
-  CONSTRAINT `administratoravailedplans_ibfk_2` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
+  CONSTRAINT `administratoravailedplans_ibfk_1` FOREIGN KEY (`planId`) REFERENCES `administratorsubscriptionplans` (`planId`) ON DELETE CASCADE,
+  CONSTRAINT `administratoravailedplans_ibfk_2` FOREIGN KEY (`administratorId`) REFERENCES `administrators` (`administratorId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `AdministratorAvailedPlans`
+-- Dumping data for table `administratoravailedplans`
 --
 
-LOCK TABLES `AdministratorAvailedPlans` WRITE;
-/*!40000 ALTER TABLE `AdministratorAvailedPlans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `AdministratorAvailedPlans` ENABLE KEYS */;
+LOCK TABLES `administratoravailedplans` WRITE;
+/*!40000 ALTER TABLE `administratoravailedplans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `administratoravailedplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Administrators`
+-- Table structure for table `administrators`
 --
 
-DROP TABLE IF EXISTS `Administrators`;
+DROP TABLE IF EXISTS `administrators`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Administrators` (
+CREATE TABLE `administrators` (
   `administratorId` bigint NOT NULL AUTO_INCREMENT,
   `fullName` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -65,22 +65,22 @@ CREATE TABLE `Administrators` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Administrators`
+-- Dumping data for table `administrators`
 --
 
-LOCK TABLES `Administrators` WRITE;
-/*!40000 ALTER TABLE `Administrators` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Administrators` ENABLE KEYS */;
+LOCK TABLES `administrators` WRITE;
+/*!40000 ALTER TABLE `administrators` DISABLE KEYS */;
+/*!40000 ALTER TABLE `administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `AdministratorSubscriptionPlans`
+-- Table structure for table `administratorsubscriptionplans`
 --
 
-DROP TABLE IF EXISTS `AdministratorSubscriptionPlans`;
+DROP TABLE IF EXISTS `administratorsubscriptionplans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `AdministratorSubscriptionPlans` (
+CREATE TABLE `administratorsubscriptionplans` (
   `planId` bigint NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `description` varchar(2000) NOT NULL,
@@ -104,50 +104,50 @@ CREATE TABLE `AdministratorSubscriptionPlans` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `AdministratorSubscriptionPlans`
+-- Dumping data for table `administratorsubscriptionplans`
 --
 
-LOCK TABLES `AdministratorSubscriptionPlans` WRITE;
-/*!40000 ALTER TABLE `AdministratorSubscriptionPlans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `AdministratorSubscriptionPlans` ENABLE KEYS */;
+LOCK TABLES `administratorsubscriptionplans` WRITE;
+/*!40000 ALTER TABLE `administratorsubscriptionplans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `administratorsubscriptionplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `AssignedRolestoUsers`
+-- Table structure for table `assignedrolestousers`
 --
 
-DROP TABLE IF EXISTS `AssignedRolestoUsers`;
+DROP TABLE IF EXISTS `assignedrolestousers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `AssignedRolestoUsers` (
+CREATE TABLE `assignedrolestousers` (
   `assignedId` bigint NOT NULL AUTO_INCREMENT,
   `roleId` int NOT NULL,
   `userId` bigint NOT NULL,
   PRIMARY KEY (`assignedId`),
   KEY `roleId` (`roleId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `UserRoles` (`roleId`) ON DELETE CASCADE,
-  CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
+  CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `userroles` (`roleId`) ON DELETE CASCADE,
+  CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `AssignedRolestoUsers`
+-- Dumping data for table `assignedrolestousers`
 --
 
-LOCK TABLES `AssignedRolestoUsers` WRITE;
-/*!40000 ALTER TABLE `AssignedRolestoUsers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `AssignedRolestoUsers` ENABLE KEYS */;
+LOCK TABLES `assignedrolestousers` WRITE;
+/*!40000 ALTER TABLE `assignedrolestousers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `assignedrolestousers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `CodingAnswers`
+-- Table structure for table `codinganswers`
 --
 
-DROP TABLE IF EXISTS `CodingAnswers`;
+DROP TABLE IF EXISTS `codinganswers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `CodingAnswers` (
+CREATE TABLE `codinganswers` (
   `answerId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `languageId` int NOT NULL,
@@ -155,28 +155,28 @@ CREATE TABLE `CodingAnswers` (
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   KEY `languageId` (`languageId`),
-  CONSTRAINT `codinganswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
-  CONSTRAINT `codinganswers_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `ProgrammingLanguage` (`languageId`) ON DELETE CASCADE
+  CONSTRAINT `codinganswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE,
+  CONSTRAINT `codinganswers_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `programminglanguage` (`languageId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CodingAnswers`
+-- Dumping data for table `codinganswers`
 --
 
-LOCK TABLES `CodingAnswers` WRITE;
-/*!40000 ALTER TABLE `CodingAnswers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CodingAnswers` ENABLE KEYS */;
+LOCK TABLES `codinganswers` WRITE;
+/*!40000 ALTER TABLE `codinganswers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `codinganswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `CodingTestCases`
+-- Table structure for table `codingtestcases`
 --
 
-DROP TABLE IF EXISTS `CodingTestCases`;
+DROP TABLE IF EXISTS `codingtestcases`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `CodingTestCases` (
+CREATE TABLE `codingtestcases` (
   `testCaseId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `input` varchar(6000) NOT NULL,
@@ -184,53 +184,53 @@ CREATE TABLE `CodingTestCases` (
   `score` double NOT NULL,
   PRIMARY KEY (`testCaseId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `codingtestcases_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  CONSTRAINT `codingtestcases_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CodingTestCases`
+-- Dumping data for table `codingtestcases`
 --
 
-LOCK TABLES `CodingTestCases` WRITE;
-/*!40000 ALTER TABLE `CodingTestCases` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CodingTestCases` ENABLE KEYS */;
+LOCK TABLES `codingtestcases` WRITE;
+/*!40000 ALTER TABLE `codingtestcases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `codingtestcases` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `DatabaseQueryAnswers`
+-- Table structure for table `databasequeryanswers`
 --
 
-DROP TABLE IF EXISTS `DatabaseQueryAnswers`;
+DROP TABLE IF EXISTS `databasequeryanswers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `DatabaseQueryAnswers` (
+CREATE TABLE `databasequeryanswers` (
   `answerId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `query` varchar(3000) NOT NULL,
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `databasequeryanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  CONSTRAINT `databasequeryanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `DatabaseQueryAnswers`
+-- Dumping data for table `databasequeryanswers`
 --
 
-LOCK TABLES `DatabaseQueryAnswers` WRITE;
-/*!40000 ALTER TABLE `DatabaseQueryAnswers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `DatabaseQueryAnswers` ENABLE KEYS */;
+LOCK TABLES `databasequeryanswers` WRITE;
+/*!40000 ALTER TABLE `databasequeryanswers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `databasequeryanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Exams`
+-- Table structure for table `exams`
 --
 
-DROP TABLE IF EXISTS `Exams`;
+DROP TABLE IF EXISTS `exams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Exams` (
+CREATE TABLE `exams` (
   `examId` bigint NOT NULL AUTO_INCREMENT,
   `administratorId` bigint NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -244,133 +244,134 @@ CREATE TABLE `Exams` (
   `isDeleted` bit(1) NOT NULL DEFAULT (0),
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
-  CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
+  CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `administrators` (`administratorId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Exams`
+-- Dumping data for table `exams`
 --
 
-LOCK TABLES `Exams` WRITE;
-/*!40000 ALTER TABLE `Exams` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Exams` ENABLE KEYS */;
+LOCK TABLES `exams` WRITE;
+/*!40000 ALTER TABLE `exams` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `McqAnswers`
+-- Table structure for table `mcqanswers`
 --
 
-DROP TABLE IF EXISTS `McqAnswers`;
+DROP TABLE IF EXISTS `mcqanswers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `McqAnswers` (
+CREATE TABLE `mcqanswers` (
   `answerId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `optionId` bigint NOT NULL,
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   KEY `optionId` (`optionId`),
-  CONSTRAINT `mcqanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
-  CONSTRAINT `mcqanswers_ibfk_2` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
+  CONSTRAINT `mcqanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE,
+  CONSTRAINT `mcqanswers_ibfk_2` FOREIGN KEY (`optionId`) REFERENCES `mcqoptions` (`optionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `McqAnswers`
+-- Dumping data for table `mcqanswers`
 --
 
-LOCK TABLES `McqAnswers` WRITE;
-/*!40000 ALTER TABLE `McqAnswers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `McqAnswers` ENABLE KEYS */;
+LOCK TABLES `mcqanswers` WRITE;
+/*!40000 ALTER TABLE `mcqanswers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mcqanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `McqOptionImages`
+-- Table structure for table `mcqoptionimages`
 --
 
-DROP TABLE IF EXISTS `McqOptionImages`;
+DROP TABLE IF EXISTS `mcqoptionimages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `McqOptionImages` (
+CREATE TABLE `mcqoptionimages` (
   `imageId` bigint NOT NULL AUTO_INCREMENT,
   `optionId` bigint NOT NULL,
   `path` varchar(2100) NOT NULL,
   `description` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`imageId`),
   KEY `optionId` (`optionId`),
-  CONSTRAINT `mcqoptionimages_ibfk_1` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
+  CONSTRAINT `mcqoptionimages_ibfk_1` FOREIGN KEY (`optionId`) REFERENCES `mcqoptions` (`optionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `McqOptionImages`
+-- Dumping data for table `mcqoptionimages`
 --
 
-LOCK TABLES `McqOptionImages` WRITE;
-/*!40000 ALTER TABLE `McqOptionImages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `McqOptionImages` ENABLE KEYS */;
+LOCK TABLES `mcqoptionimages` WRITE;
+/*!40000 ALTER TABLE `mcqoptionimages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mcqoptionimages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `McqOptions`
+-- Table structure for table `mcqoptions`
 --
 
-DROP TABLE IF EXISTS `McqOptions`;
+DROP TABLE IF EXISTS `mcqoptions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `McqOptions` (
+CREATE TABLE `mcqoptions` (
   `optionId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `option` varchar(2000) NOT NULL,
   PRIMARY KEY (`optionId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `mcqoptions_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`)
+  CONSTRAINT `mcqoptions_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `McqOptions`
+-- Dumping data for table `mcqoptions`
 --
 
-LOCK TABLES `McqOptions` WRITE;
-/*!40000 ALTER TABLE `McqOptions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `McqOptions` ENABLE KEYS */;
+LOCK TABLES `mcqoptions` WRITE;
+/*!40000 ALTER TABLE `mcqoptions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mcqoptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `ProgrammingLanguage`
+-- Table structure for table `programminglanguage`
 --
 
-DROP TABLE IF EXISTS `ProgrammingLanguage`;
+DROP TABLE IF EXISTS `programminglanguage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ProgrammingLanguage` (
+CREATE TABLE `programminglanguage` (
   `languageId` int NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `version` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
   PRIMARY KEY (`languageId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ProgrammingLanguage`
+-- Dumping data for table `programminglanguage`
 --
 
-LOCK TABLES `ProgrammingLanguage` WRITE;
-/*!40000 ALTER TABLE `ProgrammingLanguage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ProgrammingLanguage` ENABLE KEYS */;
+LOCK TABLES `programminglanguage` WRITE;
+/*!40000 ALTER TABLE `programminglanguage` DISABLE KEYS */;
+INSERT INTO `programminglanguage` VALUES (1,'java','0','JDK 1.8.0_66'),(2,'java','1','JDK 9.0.1'),(3,'java','2','JDK 10.0.1'),(4,'java','3','JDK 11.0.4'),(5,'java','4','JDK 17.0.1'),(6,'c','0','GCC 5.3.0'),(7,'c','1','Zapcc 5.0.0'),(8,'c','2','GCC 7.2.0'),(9,'c','3','GCC 8.1.0'),(10,'c','4','GCC 9.1.0'),(11,'c','5','GCC 11.1.0'),(12,'c99','0','GCC 5.3.0'),(13,'c99','1','GCC 7.2.0'),(14,'c99','2','GCC 8.1.0'),(15,'c99','3','GCC 9.1.0'),(16,'c99','4','GCC 11.1.0'),(17,'cpp','0','GCC 5.3.0'),(18,'cpp','1','Zapcc 5.0.0'),(19,'cpp','2','GCC 7.2.0'),(20,'cpp','3','GCC 8.1.0'),(21,'cpp','4','GCC 9.1.0'),(22,'cpp','5','GCC 11.1.0'),(23,'cpp14','0','g++ 14 GCC 5.3.0'),(24,'cpp14','1','g++ 14 GCC 7.2.0'),(25,'cpp14','2','g++ 14 GCC 8.1.0'),(26,'cpp14','3','g++ 14 GCC 9.1.0'),(27,'cpp14','4','GCC 11.1.0'),(28,'cpp17','0','g++ 17 GCC 9.1.0'),(29,'cpp17','1','GCC 11.1.0'),(30,'python2','0','2.7.11'),(31,'python2','1','2.7.15'),(32,'python2','2','2.7.16'),(33,'python2','3','2.7.18'),(34,'python3','0','3.5.1'),(35,'python3','1','3.6.3'),(36,'python3','2','3.6.5'),(37,'python3','3','3.7.4'),(38,'python3','4','3.9.9');
+/*!40000 ALTER TABLE `programminglanguage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QueryLanguage`
+-- Table structure for table `querylanguage`
 --
 
-DROP TABLE IF EXISTS `QueryLanguage`;
+DROP TABLE IF EXISTS `querylanguage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QueryLanguage` (
+CREATE TABLE `querylanguage` (
   `languageId` int NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
@@ -383,22 +384,22 @@ CREATE TABLE `QueryLanguage` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QueryLanguage`
+-- Dumping data for table `querylanguage`
 --
 
-LOCK TABLES `QueryLanguage` WRITE;
-/*!40000 ALTER TABLE `QueryLanguage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QueryLanguage` ENABLE KEYS */;
+LOCK TABLES `querylanguage` WRITE;
+/*!40000 ALTER TABLE `querylanguage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `querylanguage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionCategory`
+-- Table structure for table `questioncategory`
 --
 
-DROP TABLE IF EXISTS `QuestionCategory`;
+DROP TABLE IF EXISTS `questioncategory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionCategory` (
+CREATE TABLE `questioncategory` (
   `categoryId` int NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
@@ -407,76 +408,76 @@ CREATE TABLE `QuestionCategory` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QuestionCategory`
+-- Dumping data for table `questioncategory`
 --
 
-LOCK TABLES `QuestionCategory` WRITE;
-/*!40000 ALTER TABLE `QuestionCategory` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionCategory` ENABLE KEYS */;
+LOCK TABLES `questioncategory` WRITE;
+/*!40000 ALTER TABLE `questioncategory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questioncategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionImages`
+-- Table structure for table `questionimages`
 --
 
-DROP TABLE IF EXISTS `QuestionImages`;
+DROP TABLE IF EXISTS `questionimages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionImages` (
+CREATE TABLE `questionimages` (
   `imageId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `path` varchar(2100) NOT NULL,
   `description` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`imageId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `questionimages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  CONSTRAINT `questionimages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QuestionImages`
+-- Dumping data for table `questionimages`
 --
 
-LOCK TABLES `QuestionImages` WRITE;
-/*!40000 ALTER TABLE `QuestionImages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionImages` ENABLE KEYS */;
+LOCK TABLES `questionimages` WRITE;
+/*!40000 ALTER TABLE `questionimages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questionimages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionMarking`
+-- Table structure for table `questionmarking`
 --
 
-DROP TABLE IF EXISTS `QuestionMarking`;
+DROP TABLE IF EXISTS `questionmarking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionMarking` (
+CREATE TABLE `questionmarking` (
   `markingId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `score` double NOT NULL,
   `negative` double NOT NULL,
   PRIMARY KEY (`markingId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `questionmarking_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  CONSTRAINT `questionmarking_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QuestionMarking`
+-- Dumping data for table `questionmarking`
 --
 
-LOCK TABLES `QuestionMarking` WRITE;
-/*!40000 ALTER TABLE `QuestionMarking` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionMarking` ENABLE KEYS */;
+LOCK TABLES `questionmarking` WRITE;
+/*!40000 ALTER TABLE `questionmarking` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questionmarking` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Questions`
+-- Table structure for table `questions`
 --
 
-DROP TABLE IF EXISTS `Questions`;
+DROP TABLE IF EXISTS `questions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Questions` (
+CREATE TABLE `questions` (
   `questionId` bigint NOT NULL AUTO_INCREMENT,
   `sectionId` bigint NOT NULL,
   `categoryId` int NOT NULL,
@@ -484,84 +485,84 @@ CREATE TABLE `Questions` (
   PRIMARY KEY (`questionId`),
   KEY `sectionId` (`sectionId`),
   KEY `categoryId` (`categoryId`),
-  CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE,
-  CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `QuestionCategory` (`categoryId`) ON DELETE CASCADE
+  CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `sections` (`sectionId`) ON DELETE CASCADE,
+  CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `questioncategory` (`categoryId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Questions`
+-- Dumping data for table `questions`
 --
 
-LOCK TABLES `Questions` WRITE;
-/*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
+LOCK TABLES `questions` WRITE;
+/*!40000 ALTER TABLE `questions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionSupportedProgrammingLanguages`
+-- Table structure for table `questionsupportedprogramminglanguages`
 --
 
-DROP TABLE IF EXISTS `QuestionSupportedProgrammingLanguages`;
+DROP TABLE IF EXISTS `questionsupportedprogramminglanguages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionSupportedProgrammingLanguages` (
+CREATE TABLE `questionsupportedprogramminglanguages` (
   `supportedId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `languageId` int NOT NULL,
   PRIMARY KEY (`supportedId`),
   KEY `questionId` (`questionId`),
   KEY `languageId` (`languageId`),
-  CONSTRAINT `questionsupportedprogramminglanguages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
-  CONSTRAINT `questionsupportedprogramminglanguages_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `ProgrammingLanguage` (`languageId`) ON DELETE CASCADE
+  CONSTRAINT `questionsupportedprogramminglanguages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE,
+  CONSTRAINT `questionsupportedprogramminglanguages_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `programminglanguage` (`languageId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QuestionSupportedProgrammingLanguages`
+-- Dumping data for table `questionsupportedprogramminglanguages`
 --
 
-LOCK TABLES `QuestionSupportedProgrammingLanguages` WRITE;
-/*!40000 ALTER TABLE `QuestionSupportedProgrammingLanguages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionSupportedProgrammingLanguages` ENABLE KEYS */;
+LOCK TABLES `questionsupportedprogramminglanguages` WRITE;
+/*!40000 ALTER TABLE `questionsupportedprogramminglanguages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questionsupportedprogramminglanguages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionSupportedQueryLanguages`
+-- Table structure for table `questionsupportedquerylanguages`
 --
 
-DROP TABLE IF EXISTS `QuestionSupportedQueryLanguages`;
+DROP TABLE IF EXISTS `questionsupportedquerylanguages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionSupportedQueryLanguages` (
+CREATE TABLE `questionsupportedquerylanguages` (
   `supportedId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `languageId` int NOT NULL,
   PRIMARY KEY (`supportedId`),
   KEY `questionId` (`questionId`),
   KEY `languageId` (`languageId`),
-  CONSTRAINT `questionsupportedquerylanguages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
-  CONSTRAINT `questionsupportedquerylanguages_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `QueryLanguage` (`languageId`) ON DELETE CASCADE
+  CONSTRAINT `questionsupportedquerylanguages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE,
+  CONSTRAINT `questionsupportedquerylanguages_ibfk_2` FOREIGN KEY (`languageId`) REFERENCES `querylanguage` (`languageId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `QuestionSupportedQueryLanguages`
+-- Dumping data for table `questionsupportedquerylanguages`
 --
 
-LOCK TABLES `QuestionSupportedQueryLanguages` WRITE;
-/*!40000 ALTER TABLE `QuestionSupportedQueryLanguages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionSupportedQueryLanguages` ENABLE KEYS */;
+LOCK TABLES `questionsupportedquerylanguages` WRITE;
+/*!40000 ALTER TABLE `questionsupportedquerylanguages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questionsupportedquerylanguages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Sections`
+-- Table structure for table `sections`
 --
 
-DROP TABLE IF EXISTS `Sections`;
+DROP TABLE IF EXISTS `sections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Sections` (
+CREATE TABLE `sections` (
   `sectionId` bigint NOT NULL AUTO_INCREMENT,
   `examId` bigint NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -571,81 +572,81 @@ CREATE TABLE `Sections` (
   `questionNavigation` bit(1) NOT NULL,
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
-  CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
+  CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `exams` (`examId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Sections`
+-- Dumping data for table `sections`
 --
 
-LOCK TABLES `Sections` WRITE;
-/*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
+LOCK TABLES `sections` WRITE;
+/*!40000 ALTER TABLE `sections` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `TrueFalseAnswers`
+-- Table structure for table `truefalseanswers`
 --
 
-DROP TABLE IF EXISTS `TrueFalseAnswers`;
+DROP TABLE IF EXISTS `truefalseanswers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `TrueFalseAnswers` (
+CREATE TABLE `truefalseanswers` (
   `answerId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `answer` bit(1) NOT NULL,
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
-  CONSTRAINT `truefalseanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  CONSTRAINT `truefalseanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TrueFalseAnswers`
+-- Dumping data for table `truefalseanswers`
 --
 
-LOCK TABLES `TrueFalseAnswers` WRITE;
-/*!40000 ALTER TABLE `TrueFalseAnswers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `TrueFalseAnswers` ENABLE KEYS */;
+LOCK TABLES `truefalseanswers` WRITE;
+/*!40000 ALTER TABLE `truefalseanswers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `truefalseanswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `UserCreatedByAUser`
+-- Table structure for table `usercreatedbyauser`
 --
 
-DROP TABLE IF EXISTS `UserCreatedByAUser`;
+DROP TABLE IF EXISTS `usercreatedbyauser`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `UserCreatedByAUser` (
+CREATE TABLE `usercreatedbyauser` (
   `createdId` bigint NOT NULL AUTO_INCREMENT,
   `createdUserId` bigint NOT NULL,
   `createdByUserId` bigint NOT NULL,
   PRIMARY KEY (`createdId`),
   KEY `createdUserId` (`createdUserId`),
   KEY `createdByUserId` (`createdByUserId`),
-  CONSTRAINT `usercreatedbyauser_ibfk_1` FOREIGN KEY (`createdUserId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE,
-  CONSTRAINT `usercreatedbyauser_ibfk_2` FOREIGN KEY (`createdByUserId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
+  CONSTRAINT `usercreatedbyauser_ibfk_1` FOREIGN KEY (`createdUserId`) REFERENCES `users` (`userId`) ON DELETE CASCADE,
+  CONSTRAINT `usercreatedbyauser_ibfk_2` FOREIGN KEY (`createdByUserId`) REFERENCES `users` (`userId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `UserCreatedByAUser`
+-- Dumping data for table `usercreatedbyauser`
 --
 
-LOCK TABLES `UserCreatedByAUser` WRITE;
-/*!40000 ALTER TABLE `UserCreatedByAUser` DISABLE KEYS */;
-/*!40000 ALTER TABLE `UserCreatedByAUser` ENABLE KEYS */;
+LOCK TABLES `usercreatedbyauser` WRITE;
+/*!40000 ALTER TABLE `usercreatedbyauser` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usercreatedbyauser` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `UserRoles`
+-- Table structure for table `userroles`
 --
 
-DROP TABLE IF EXISTS `UserRoles`;
+DROP TABLE IF EXISTS `userroles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `UserRoles` (
+CREATE TABLE `userroles` (
   `roleId` int NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
@@ -654,22 +655,22 @@ CREATE TABLE `UserRoles` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `UserRoles`
+-- Dumping data for table `userroles`
 --
 
-LOCK TABLES `UserRoles` WRITE;
-/*!40000 ALTER TABLE `UserRoles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `UserRoles` ENABLE KEYS */;
+LOCK TABLES `userroles` WRITE;
+/*!40000 ALTER TABLE `userroles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userroles` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `Users`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
   `userId` bigint NOT NULL AUTO_INCREMENT,
   `administratorId` bigint NOT NULL,
   `username` varchar(100) NOT NULL,
@@ -680,12 +681,12 @@ CREATE TABLE `Users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Users`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `Users` WRITE;
-/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -697,4 +698,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-09  1:30:12
+-- Dump completed on 2022-02-09 18:32:56
