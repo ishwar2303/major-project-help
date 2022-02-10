@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.26, for macos11 (x86_64)
 --
 -- Host: localhost    Database: quizwit
 -- ------------------------------------------------------
--- Server version	8.0.27
+-- Server version	8.0.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -170,17 +170,18 @@ LOCK TABLES `codinganswers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `codingtestcases`
+-- Table structure for table `CodingTestCases`
 --
 
-DROP TABLE IF EXISTS `codingtestcases`;
+DROP TABLE IF EXISTS `CodingTestCases`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `codingtestcases` (
+CREATE TABLE `CodingTestCases` (
   `testCaseId` bigint NOT NULL AUTO_INCREMENT,
   `questionId` bigint NOT NULL,
   `input` varchar(6000) NOT NULL,
   `output` varchar(6000) NOT NULL,
+  `hidden` bit(1) NOT NULL,
   `score` double NOT NULL,
   PRIMARY KEY (`testCaseId`),
   KEY `questionId` (`questionId`),
@@ -189,12 +190,12 @@ CREATE TABLE `codingtestcases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `codingtestcases`
+-- Dumping data for table `CodingTestCases`
 --
 
-LOCK TABLES `codingtestcases` WRITE;
-/*!40000 ALTER TABLE `codingtestcases` DISABLE KEYS */;
-/*!40000 ALTER TABLE `codingtestcases` ENABLE KEYS */;
+LOCK TABLES `CodingTestCases` WRITE;
+/*!40000 ALTER TABLE `CodingTestCases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `CodingTestCases` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -471,17 +472,18 @@ LOCK TABLES `questionmarking` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `questions`
+-- Table structure for table `Questions`
 --
 
-DROP TABLE IF EXISTS `questions`;
+DROP TABLE IF EXISTS `Questions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `questions` (
+CREATE TABLE `Questions` (
   `questionId` bigint NOT NULL AUTO_INCREMENT,
   `sectionId` bigint NOT NULL,
   `categoryId` int NOT NULL,
   `question` varchar(6000) NOT NULL,
+  `explanation` varchar(6000) DEFAULT NULL,
   PRIMARY KEY (`questionId`),
   KEY `sectionId` (`sectionId`),
   KEY `categoryId` (`categoryId`),
@@ -491,12 +493,12 @@ CREATE TABLE `questions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `questions`
+-- Dumping data for table `Questions`
 --
 
-LOCK TABLES `questions` WRITE;
-/*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `questions` ENABLE KEYS */;
+LOCK TABLES `Questions` WRITE;
+/*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -698,4 +700,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-09 18:32:56
+-- Dump completed on 2022-02-10 15:36:00
