@@ -1,4 +1,4 @@
-
+drop database quizwit;
 create database quizwit;
 use quizwit;
 -- MySQL dump 10.13  Distrib 8.0.26, for macos11 (x86_64)
@@ -188,9 +188,7 @@ CREATE TABLE `CodingAnswers` (
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   KEY `languageId` (`languageId`),
-  FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
-  FOREIGN KEY (`languageId`) REFERENCES `ProgrammingLanguage` (`languageId`) ON DELETE CASCADE,
-  FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
+  FOREIGN KEY (`languageId`) REFERENCES `ProgrammingLanguage` (`languageId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -245,7 +243,6 @@ CREATE TABLE `DatabaseQueryAnswers` (
   `query` varchar(3000) NOT NULL,
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
-  FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
   FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -855,8 +852,8 @@ CREATE TABLE `UserCreatedByAUser` (
   PRIMARY KEY (`createdId`),
   KEY `createdUserId` (`createdUserId`),
   KEY `createdByUserId` (`createdByUserId`),
-  FOREIGN KEY (`createdUserId`) REFERENCES `users` (`userId`) ON DELETE CASCADE,
-  FOREIGN KEY (`createdByUserId`) REFERENCES `users` (`userId`) ON DELETE CASCADE
+  FOREIGN KEY (`createdUserId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE,
+  FOREIGN KEY (`createdByUserId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
