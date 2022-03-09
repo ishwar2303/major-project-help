@@ -5,7 +5,7 @@ SHOW GRANTS FOR 'admin'@'localhost';
 
 GRANT ALL PRIVILEGES ON `quizwit`.`Administrators` TO 'admin'@'localhost';
 
-
+GRANT SELECT ON `quizwit`.`ProgrammingLanguage` TO 'ADMIN'@'LOCALHOST';
 
 
 
