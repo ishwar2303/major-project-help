@@ -25,13 +25,93 @@
     
         \tableofcontents[sections={7-10}]
     \end{frame}
-    \section{Objectives}
-    \begin{frame}{Objectives}
-        \Large
-            QuizWit is a web-based application for online exams. It contains various question templates and salient features. 
-            \\~\\
-            The main goal of our application is to effectively evaluate the student thoroughly through a totally automated system that not only reduce the required time but also obtain fast and accurate results.
-    \end{frame}
+\section{Objectives}
+\begin{frame}{Objectives}
+    \Large
+        QuizWit is a web-based application for online exams. It contains various question templates and salient features. 
+        \\~\\
+        The main goal of our application is to effectively evaluate the student thoroughly through a totally automated system that not only reduce the required time but also obtain fast and accurate results.
+\end{frame}
+
+\section{Literature Survey}
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    1. & Muna R. Hameed, Firas A. Abdullatif & Online Examination System & PHP and MySQL & 2017
+                    \\
+                \hline
+                    2. & Zhao Qiao-fang, Li Yong-fei & Research and Development of Online Examination System & JSP, JavaScript & 2012\\
+                \hline
+                    3. & Anjali Choubey, Avinash Kumarb, Ayush Ranjan Behra, Anil Raj Kisku, Asha Rabidase and Beas Bhadra & A Study on Web Based Online Examination System & MySQL, AJAX, JavaScript & 2020\\
+                \hline
+                    4. & Gabriele Frankl, Sofie Schratt-Bitter  & AOnline Exams: & PHP, HTML, AJAX & 2012\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    5. & Rajesh kumar, Neetesh kumar, Sabeen Gul, Shahbaz Wahab ,Mohammad Umer
+, Arshd Arain  & A web-based online examination system
+for computer science education  & PHP, HTML, AJAX, JQuery & 2018
+                    \\
+                \hline
+                    6. & Lu Chang, Xu Guang Ming & Application Research of Web Examination System Based on
+College & PHP, JSP, ASP.NET & 2012\\
+                \hline
+                    7. & Deepankar Vishwas Kotwal, Shubham Rajendra Bhadke,
+Aishwarya Sanjay Gunjal, Puspendu Biswas & Online Examination System & HTML, JSP, MS ACCESS & 2016\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    8. & Olalere A. ABASS, Samuel A. OLAJIDE, Babafemi O. SAMUEL  & DEVELOPMENT OF WEB-BASED EXAMINATION SYSTEM USING
+OPEN SOURCE PROGRAMMING MODEL  & CSS, HTML, PHP SQL MySQL & 2017
+                    \\
+                \hline
+                    9. & Gurudatta Verma, Shweta Parmar, Ritu Saluja & Smart Assessment System by Means of Online Exam System & PHP, HTML, CSS, JavaScript & 2018\\
+                \hline
+                    10. & Deepankar Vishwas Kotwal, Shubham Rajendra Bhadke,
+Aishwarya Sanjay Gunjal, Puspendu Biswas & Online Examination System & HTML, JSP, MS ACCESS & 2016\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+
 \section{Architectural Design for Proposed System}
 \begin{frame}[t]{Architectural Design for Proposed System}
     \begin{itemize}
