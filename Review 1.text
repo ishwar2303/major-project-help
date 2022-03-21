@@ -1,0 +1,185 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title[22MPD063]{QuizWit}
+\subtitle{Project ID: 22MPH121\\ Review 1}
+\author[Review -I]{Group~Members\\RA1811003030232~Ishwar Baisla\\RA1811003030190~Ayush Goel\\ RA1811003030231~Piyush Kumar\\RA1811003030230~Khubaib Hadi Usmani\\ {Supervised By:\\Mr Arvind Kumar \\Assistant Professor}}
+
+\institute[]{Department of Computer Science \& Engineering\\Faculty of Engineering \& Technology\\SRM Institute of Science \& Technology}
+
+\logo{\includegraphics[scale=.2]{srm_logo.png}}
+%\author{YYY}
+\date{\today}
+\begin{document}
+    \begin{frame}
+        \maketitle
+        \date{}
+            \end{frame}
+    \begin{frame}[allowframebreaks]{Table of Contents} %we can expand the table of contents in more than on frame
+        \tableofcontents[sections={1-6}]
+    
+        \tableofcontents[sections={7-10}]
+    \end{frame}
+\section{Objectives}
+\begin{frame}{Objectives}
+    \Large
+        QuizWit is a web-based application for online exams. It contains various question templates and salient features. 
+        \\~\\
+        The main goal of our application is to effectively evaluate the student thoroughly through a totally automated system that not only reduce the required time but also obtain fast and accurate results.
+\end{frame}
+
+\section{Literature Survey}
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    1. & Muna R. Hameed, Firas A. Abdullatif & Online Examination System & PHP and MySQL & 2017
+                    \\
+                \hline
+                    2. & Zhao Qiao-fang, Li Yong-fei & Research and Development of Online Examination System & JSP, JavaScript & 2012\\
+                \hline
+                    3. & Anjali Choubey, Avinash Kumarb, Ayush Ranjan Behra, Anil Raj Kisku, Asha Rabidase and Beas Bhadra & A Study on Web Based Online Examination System & MySQL, AJAX, JavaScript & 2020\\
+                \hline
+                    4. & Gabriele Frankl, Sofie Schratt-Bitter  & AOnline Exams: & PHP, HTML, AJAX & 2012\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    5. & Rajesh kumar, Neetesh kumar, Sabeen Gul, Shahbaz Wahab ,Mohammad Umer
+, Arshd Arain  & A web-based online examination system
+for computer science education  & PHP, HTML, AJAX, JQuery & 2018
+                    \\
+                \hline
+                    6. & Lu Chang, Xu Guang Ming & Application Research of Web Examination System Based on
+College & PHP, JSP, ASP.NET & 2012\\
+                \hline
+                    7. & Deepankar Vishwas Kotwal, Shubham Rajendra Bhadke,
+Aishwarya Sanjay Gunjal, Puspendu Biswas & Online Examination System & HTML, JSP, MS ACCESS & 2016\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+\begin{frame}{Literature Survey}
+    \begin{center}
+        \tiny
+            \begin{table}[h]
+                \centering \def\arraystretch{1.5} \small
+                \begin{tabular}{|p{0.5cm}|p{3cm}|p{3cm}|p{2cm}|p{1cm}|}
+                \hline
+                \thead{S No.} & \thead{Authors} & \thead{Title} & \thead{Technology} & \thead{Year}\\
+                \hline
+                    8. & Olalere A. ABASS, Samuel A. OLAJIDE, Babafemi O. SAMUEL  & DEVELOPMENT OF WEB-BASED EXAMINATION SYSTEM USING
+OPEN SOURCE PROGRAMMING MODEL  & CSS, HTML, PHP SQL MySQL & 2017
+                    \\
+                \hline
+                    9. & Gurudatta Verma, Shweta Parmar, Ritu Saluja & Smart Assessment System by Means of Online Exam System & PHP, HTML, CSS, JavaScript & 2018\\
+                \hline
+                    10. & Deepankar Vishwas Kotwal, Shubham Rajendra Bhadke,
+Aishwarya Sanjay Gunjal, Puspendu Biswas & Online Examination System & HTML, JSP, MS ACCESS & 2016\\
+                \hline
+                \end{tabular}
+                
+            \end{table}
+        \tiny
+    \end{center}
+\end{frame}
+
+
+\section{Architectural Design for Proposed System}
+\begin{frame}[t]{Architectural Design for Proposed System}
+    \begin{itemize}
+        \medskip
+        \item The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components is built to handle specific development aspects of an application. MVC is one of the most frequently used industry-standard web development frameworks to create scalable and extensible projects.
+\medskip
+\item
+\textbf
+{Model}:- The Model contains only the pure application data. It contains no logic describing how to present the data to the user.
+\medskip
+\item
+\textbf
+{View}:- The View component presents the Model's data to the user. 
+\medskip
+\item
+\textbf
+{Controller}:- Controller exists between the View and the Model. It listens to events triggered by the view and execute appropriate reaction.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Architectural Design for Proposed System}
+    \begin{center}
+        \includegraphics[width=11cm, height=7cm]{model-view-controller-light-blue.png}
+    \end{center}
+\end{frame}
+
+\section{Technology used in the Project}
+\begin{frame}{Technology used in the Project}
+    \begin{center}
+        \includegraphics[width=100mm,scale=1]{Technology.png}
+    \end{center}
+\end{frame}
+
+\section{Algorithm used in the Project}
+\begin{frame}{Algorithm used in the Project}
+    \begin{center}
+        \includegraphics[width=100mm,scale=1]{Fisher Yates Shuffle Final.png}
+    \end{center}
+\end{frame}
+
+\section{References}
+\begin{frame}{References}
+    \begin{itemize}
+        \item Guizhen Wang (2016). Design of a Student’s Online Examination System Based on B/S Architecture. Advances in Social Science, Education and Humanities Research (ASSEHR), volume 75 2016 International Seminar on Education, Innovation and Economic Management (SEIEM 2016). Published by Atlantis Press. 181-181.
+        \item Yuan Zhenming, Zhang Liang, Zhan Guohua (2003). A NOVEL WEB-BASED ONLINE EXAMINATION SYSTEM FOR COMPUTER SCIENCE EDUCATION. 33rd ASEE/IEEE Frontiers in Education Conference. S3F-7.
+        \item Arbab Khan, Abhishek Bajaj3, Jasmine Bedi Khurana, Aishwarya Rai. (2017). An efficient online examination system using speech recognition. International Research Journal of Engineering and Technology (IRJET), Volume: 04 Issue: 04, Apr -2017. 2938-2938.
+        \item Chaitanya Ekanadham, Yan Karklin. (2017). T-SKIRT: Online Estimation of Student Proficiency in an Adaptive Learning System. arXiv:1702.04282v1 [cs.AI] 14 Feb 2017.
+    \end{itemize} 
+    \bibliographystyle {abbrv}
+    \bibliography {cite}
+\end{frame}
+
+\begin{frame}{References}
+    \begin{itemize}
+        \item Md. Zahirul Islam, Md. Mostafizur Rahman and Md. Kabirul Jagannath. (2013). University 2,3Daffodil International University, Dhaka, Bangladesh. ONLINE EXAMINATION SYSTEM IN BANGLADESH CONTEXT. International Journal of Science, Environment and Technology, Vol. 2, No 3, 2013, 351 – 359. 351-351.
+        \item Zhao Qiao-fang & Li Yong-fei. (2012). Research and Development of Online Examination System). Proceedings of the 2012 2nd International Conference on Computer and Information Application (ICCIA 2012). 0936-0936. 
+        \item Deepankar Vishwas Kotwal, Shubham Rajendra Bhadke, Aishwarya Sanjay Gunjal, Puspendu Biswas. (2016). ONLINE EXAMINATION SYSTEM. International Research Journal of Engineering and Technology (IRJET) eISSN: 2395 -0056 Volume: 03 Issue: 01 | Jan-2016 www.irjet.net p-ISSN: 2395-0072 
+    \end{itemize} 
+    \bibliographystyle {abbrv}
+    \bibliography {cite}
+\end{frame}
+
+
+\section{}
+\begin{frame}
+\begin{center}
+    \includegraphics[width=5cm, height=2cm]{Capture.JPG}
+\end{center}
+
+\end{frame}
+\end{document}
