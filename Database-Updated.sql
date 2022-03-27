@@ -60,7 +60,7 @@ CREATE TABLE `AssignedRolesToUsers` (
   KEY `userId` (`userId`),
   CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `UserRoles` (`roleId`) ON DELETE CASCADE,
   CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `AssignedRolesToUsers` (
 
 LOCK TABLES `AssignedRolesToUsers` WRITE;
 /*!40000 ALTER TABLE `AssignedRolesToUsers` DISABLE KEYS */;
-INSERT INTO `AssignedRolesToUsers` VALUES (54,1,28),(55,2,28),(104,5,33),(105,3,33),(106,4,33),(107,7,33),(108,1,33),(109,8,33),(111,2,35),(112,3,35);
+INSERT INTO `AssignedRolesToUsers` VALUES (111,2,35),(112,3,35);
 /*!40000 ALTER TABLE `AssignedRolesToUsers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,13 +187,13 @@ LOCK TABLES `DatabaseQueryAnswers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Exams`
+-- Table structure for table `exams`
 --
 
-DROP TABLE IF EXISTS `Exams`;
+DROP TABLE IF EXISTS `exams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Exams` (
+CREATE TABLE `exams` (
   `examId` bigint NOT NULL AUTO_INCREMENT,
   `administratorId` bigint NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -205,8 +205,13 @@ CREATE TABLE `Exams` (
   `examTimer` bigint NOT NULL,
   `setSectionTimer` bit(1) NOT NULL,
   `sectionNavigation` bit(1) NOT NULL DEFAULT (1),
-  `sectionNavigationFlexibility` bit(1) NOT NULL,
   `isDeleted` bit(1) NOT NULL DEFAULT (0),
+  `startTime` timestamp NULL DEFAULT NULL,
+  `endTime` timestamp NULL DEFAULT NULL,
+  `isActive` bit(1) NOT NULL,
+  `windowTime` int NOT NULL,
+  `numberOfAttempts` int NOT NULL,
+  `timestamp` timestamp NOT NULL,
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
@@ -214,12 +219,12 @@ CREATE TABLE `Exams` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Exams`
+-- Dumping data for table `exams`
 --
 
-LOCK TABLES `Exams` WRITE;
-/*!40000 ALTER TABLE `Exams` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Exams` ENABLE KEYS */;
+LOCK TABLES `exams` WRITE;
+/*!40000 ALTER TABLE `exams` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -809,7 +814,7 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`userId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -818,7 +823,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (28,3,'piyush1321','23031999',_binary '\0'),(32,3,'abc123','23031999',_binary ''),(33,3,'omg123','23031999',_binary ''),(34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0');
+INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(45,3,'mp2022','23031999',_binary '\0');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -831,4 +836,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-21 15:05:40
+-- Dump completed on 2022-03-27 10:04:31
