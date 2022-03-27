@@ -11,6 +11,8 @@ GRANT ALL PRIVILEGES ON `quizwit`.`Users` TO 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`AssignedRolesToUsers` TO 'admin'@'localhost';
 GRANT SELECT ON `quizwit`.`UserRoles` TO 'admin'@'localhost';
 
+GRANT ALL PRIVILEGES ON `quizwit`.`Exams` TO 'admin'@'localhost';
+
 
 /* Student */
 CREATE USER 'student'@'localhost' IDENTIFIED BY '23031999';
