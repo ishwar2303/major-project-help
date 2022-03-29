@@ -60,7 +60,7 @@ CREATE TABLE `AssignedRolesToUsers` (
   KEY `userId` (`userId`),
   CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `UserRoles` (`roleId`) ON DELETE CASCADE,
   CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `exams` (
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +224,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (1,3,'Aptitude','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',0,_binary '\0',_binary '',_binary '\0','2022-03-27 15:32:00',_binary '\0',900,1,'2022-03-27 15:32:19');
+INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(5,3,'History','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',7200,_binary '\0',_binary '',_binary '\0','2022-03-31 09:48:00',_binary '\0',900,1,'2022-03-28 09:48:23'),(8,3,'English','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 07:55:00',_binary '\0',900,3,'2022-03-29 07:55:52'),(11,3,'Piyush Kumar','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 11:39:00',_binary '\0',1800,1,'2022-03-29 11:41:44'),(12,3,'Ishwar','NA','Moderate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(13,3,'ABC','NA','Moderate','NA',_binary '\0',_binary '\0',_binary '',1800,_binary '\0',_binary '',_binary '\0','2022-03-29 11:47:00',_binary '\0',200,1,'2022-03-29 11:48:01'),(14,3,'Title','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2021-12-31 19:30:00',_binary '',100,1,'2022-03-29 11:51:35'),(15,3,'Testing 2','NA','Moderate','',_binary '',_binary '\0',_binary '\0',0,_binary '',_binary '',_binary '\0','2021-12-31 19:30:00',_binary '',900,3,'2022-03-29 12:09:31');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -578,7 +578,8 @@ CREATE TABLE `Sections` (
   `examId` bigint NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `sectionTimer` bigint NOT NULL,
+  `setSectionTimer` bit(1) NOT NULL,
+  `timeDuration` bigint NOT NULL,
   `setQuestionTimer` bit(1) NOT NULL,
   `questionNavigation` bit(1) NOT NULL,
   `orderId` int NOT NULL,
@@ -815,7 +816,7 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`userId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -824,7 +825,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(45,3,'mp2022','23031999',_binary '');
+INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(46,3,'piyush1321','12345678',_binary '\0');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -837,4 +838,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-27 21:03:43
+-- Dump completed on 2022-03-29 19:07:11
