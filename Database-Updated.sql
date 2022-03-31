@@ -31,7 +31,7 @@ CREATE TABLE `Administrators` (
   `isActive` bit(1) NOT NULL DEFAULT (1),
   PRIMARY KEY (`administratorId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `Administrators` (
 
 LOCK TABLES `Administrators` WRITE;
 /*!40000 ALTER TABLE `Administrators` DISABLE KEYS */;
-INSERT INTO `Administrators` VALUES (3,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary ''),(4,'Tapas Baranwal','tapasbaranwal@gmail.com',9821671707,'23031999',_binary '');
+INSERT INTO `Administrators` VALUES (3,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary ''),(4,'Tapas Baranwal','tapasbaranwal@gmail.com',9821671707,'23031999',_binary ''),(5,'Piyush Kumar','piyushkumar1321@gmail.com',9821671707,'23031999',_binary '');
 /*!40000 ALTER TABLE `Administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `AssignedRolesToUsers` (
   KEY `userId` (`userId`),
   CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `UserRoles` (`roleId`) ON DELETE CASCADE,
   CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `AssignedRolesToUsers` (
 
 LOCK TABLES `AssignedRolesToUsers` WRITE;
 /*!40000 ALTER TABLE `AssignedRolesToUsers` DISABLE KEYS */;
-INSERT INTO `AssignedRolesToUsers` VALUES (111,2,35),(112,3,35);
+INSERT INTO `AssignedRolesToUsers` VALUES (111,2,35),(112,3,35),(279,4,47),(280,2,47),(281,3,48),(286,5,49),(287,3,49),(288,4,49),(289,6,49);
 /*!40000 ALTER TABLE `AssignedRolesToUsers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +215,7 @@ CREATE TABLE `exams` (
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +224,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(5,3,'History','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',7200,_binary '\0',_binary '',_binary '\0','2022-03-31 09:48:00',_binary '\0',900,1,'2022-03-28 09:48:23'),(8,3,'English','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 07:55:00',_binary '\0',900,3,'2022-03-29 07:55:52'),(11,3,'Piyush Kumar','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 11:39:00',_binary '\0',1800,1,'2022-03-29 11:41:44'),(12,3,'Ishwar','NA','Moderate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(13,3,'ABC','NA','Moderate','NA',_binary '\0',_binary '\0',_binary '',1800,_binary '\0',_binary '',_binary '\0','2022-03-29 11:47:00',_binary '\0',200,1,'2022-03-29 11:48:01'),(14,3,'Title','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2021-12-31 19:30:00',_binary '',100,1,'2022-03-29 11:51:35'),(15,3,'Testing 2','NA','Moderate','',_binary '',_binary '\0',_binary '\0',0,_binary '',_binary '',_binary '\0','2021-12-31 19:30:00',_binary '',900,3,'2022-03-29 12:09:31');
+INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-28 09:45:00',_binary '',900,10,'2022-03-28 09:46:07'),(5,3,'History','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',7200,_binary '\0',_binary '',_binary '\0','2022-03-31 09:48:00',_binary '',900,1,'2022-03-28 09:48:23'),(8,3,'English','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 07:55:00',_binary '\0',900,3,'2022-03-29 07:55:52'),(11,3,'Piyush Kumar','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 11:39:00',_binary '',1800,1,'2022-03-29 11:41:44'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(13,3,'ABC','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',1800,_binary '\0',_binary '',_binary '\0','2022-03-29 11:47:00',_binary '\0',200,1,'2022-03-29 11:48:01'),(14,3,'Title','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2021-12-31 19:30:00',_binary '',100,1,'2022-03-29 11:51:35'),(16,3,'Apti','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2021-12-31 19:30:00',_binary '\0',300,10,'2022-03-30 09:16:31');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -586,7 +586,7 @@ CREATE TABLE `Sections` (
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
   CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -787,7 +787,7 @@ CREATE TABLE `UserRoles` (
   `code` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
   PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -796,7 +796,7 @@ CREATE TABLE `UserRoles` (
 
 LOCK TABLES `UserRoles` WRITE;
 /*!40000 ALTER TABLE `UserRoles` DISABLE KEYS */;
-INSERT INTO `UserRoles` VALUES (1,'CreateUser','Create management user'),(2,'DeleteUser','Delete management user'),(3,'CreateExam','Create exam'),(4,'DeleteExam','Delete exam'),(5,'AddSection','Add section in a exam'),(6,'DeleteSection','Delete section in a exam'),(7,'AddQuestion','Add question in a section'),(8,'DeleteQuestion','Delete question in a section'),(9,'UpdateUserStatus','Active or Inactive user'),(10,'UpdateUserRoles','Grant or revoke roles from user');
+INSERT INTO `UserRoles` VALUES (1,'CreateUser','Create management user'),(2,'DeleteUser','Delete management user'),(3,'CreateExam','Create exam'),(4,'DeleteExam','Delete exam'),(5,'AddSection','Add section in a exam'),(6,'DeleteSection','Delete section in a exam'),(7,'AddQuestion','Add question in a section'),(8,'DeleteQuestion','Delete question in a section'),(9,'UpdateUserStatus','Active or Inactive user'),(10,'UpdateUserRoles','Grant or revoke roles from user'),(11,'UpdateExamStatus','Active/Inactive exam'),(12,'UpdateExam','Update exam details'),(13,'UpdateSection','Update section details'),(14,'UpdateQuestion','Update question details');
 /*!40000 ALTER TABLE `UserRoles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -816,7 +816,7 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`userId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -825,7 +825,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(46,3,'piyush1321','12345678',_binary '\0');
+INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(47,3,'ishwar1999','23031999',_binary ''),(48,3,'tapasbaranwal','23031999',_binary ''),(49,3,'piyush1321','23031999',_binary '');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -838,4 +838,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-29 19:07:11
+-- Dump completed on 2022-03-31 22:23:06
