@@ -13,6 +13,7 @@ GRANT SELECT ON `quizwit`.`UserRoles` TO 'admin'@'localhost';
 
 GRANT ALL PRIVILEGES ON `quizwit`.`Exams` TO 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`Sections` TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON `quizwit`.`Questions` TO 'admin'@'localhost';
 
 
 /* Student */
