@@ -69,7 +69,7 @@ CREATE TABLE `AssignedRolesToUsers` (
 
 LOCK TABLES `AssignedRolesToUsers` WRITE;
 /*!40000 ALTER TABLE `AssignedRolesToUsers` DISABLE KEYS */;
-INSERT INTO `AssignedRolesToUsers` VALUES (111,2,35),(112,3,35),(279,4,47),(280,2,47),(281,3,48),(286,5,49),(287,3,49),(288,4,49),(289,6,49);
+INSERT INTO `AssignedRolesToUsers` VALUES (111,2,35),(112,3,35),(279,4,47),(280,2,47),(281,3,48);
 /*!40000 ALTER TABLE `AssignedRolesToUsers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +215,7 @@ CREATE TABLE `exams` (
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +224,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(8,3,'English','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 07:55:00',_binary '\0',900,3,'2022-03-29 07:55:52'),(11,3,'Piyush Kumar','NA','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-03-29 11:39:00',_binary '',1800,1,'2022-03-29 11:41:44'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(13,3,'ABC','NA','Intermediate','NA',_binary '',_binary '\0',_binary '',1800,_binary '\0',_binary '',_binary '\0','2022-04-01 05:55:00',_binary '\0',200,1,'2022-03-29 11:48:01'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-01 05:54:00',_binary '\0',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-01 06:28:00',_binary '\0',300,10,'2022-03-30 09:16:31');
+INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-01 05:54:00',_binary '\0',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-01 06:28:00',_binary '\0',300,10,'2022-03-30 09:16:31');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -587,7 +587,7 @@ CREATE TABLE `Sections` (
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
   CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -596,7 +596,7 @@ CREATE TABLE `Sections` (
 
 LOCK TABLES `Sections` WRITE;
 /*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
-INSERT INTO `Sections` VALUES (2,16,'General Knowledge','GK',_binary '',0,_binary '\0',_binary '\0',_binary '\0',0),(3,8,'WOW','Great',_binary '',900,_binary '\0',_binary '',_binary '\0',0),(4,16,'English','NA',_binary '',1800,_binary '\0',_binary '',_binary '\0',0),(5,16,'Verbal','NA',_binary '',1800,_binary '\0',_binary '',_binary '\0',0),(6,16,'Maths','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0);
+INSERT INTO `Sections` VALUES (7,16,'A1','Na',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(20,14,'History 1.0','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(21,14,'Politics 1.0','NA',_binary '\0',0,_binary '',_binary '',_binary '',0),(22,14,'Geography','Na',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(23,16,'B1','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(24,16,'C1','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0),(25,16,'D1','NA',_binary '',2700,_binary '\0',_binary '',_binary '',0);
 /*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -827,7 +827,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(47,3,'ishwar1999','23031999',_binary ''),(48,3,'tapasbaranwal','23031999',_binary ''),(49,3,'piyush1321','23031999',_binary '\0');
+INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(47,3,'ishwar1999','23031999',_binary ''),(48,3,'tapasbaranwal','23031999',_binary '');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -840,4 +840,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-01 12:20:59
+-- Dump completed on 2022-04-02 14:43:40
