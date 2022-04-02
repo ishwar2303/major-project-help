@@ -224,7 +224,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-01 05:54:00',_binary '\0',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-01 06:28:00',_binary '\0',300,10,'2022-03-30 09:16:31');
+INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-01 05:54:00',_binary '\0',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-01 06:28:00',_binary '',300,10,'2022-03-30 09:16:31');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -375,7 +375,7 @@ CREATE TABLE `QuestionCategory` (
   `code` varchar(50) NOT NULL,
   `description` varchar(100) NOT NULL,
   PRIMARY KEY (`categoryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -384,6 +384,7 @@ CREATE TABLE `QuestionCategory` (
 
 LOCK TABLES `QuestionCategory` WRITE;
 /*!40000 ALTER TABLE `QuestionCategory` DISABLE KEYS */;
+INSERT INTO `QuestionCategory` VALUES (1,'MCQ SC','Multiple choice questions, Single correct'),(2,'MCQ MC','Multiple choice questions, Multiple correct'),(3,'TF','True or False questions'),(4,'PROGRAMMING','Coding questions'),(5,'DATABASE QUERY','Database query questions');
 /*!40000 ALTER TABLE `QuestionCategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -466,7 +467,7 @@ CREATE TABLE `Questions` (
   KEY `categoryId` (`categoryId`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE,
   CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `QuestionCategory` (`categoryId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -596,7 +597,7 @@ CREATE TABLE `Sections` (
 
 LOCK TABLES `Sections` WRITE;
 /*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
-INSERT INTO `Sections` VALUES (7,16,'A1','Na',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(20,14,'History 1.0','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(21,14,'Politics 1.0','NA',_binary '\0',0,_binary '',_binary '',_binary '',0),(22,14,'Geography','Na',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(23,16,'B1','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(24,16,'C1','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0),(25,16,'D1','NA',_binary '',2700,_binary '\0',_binary '',_binary '',0);
+INSERT INTO `Sections` VALUES (7,16,'A1','Na',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(20,14,'History 1.0','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(21,14,'Politics 1.0','NA',_binary '\0',0,_binary '',_binary '',_binary '',0),(22,14,'Geography','Na',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(23,16,'B1','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(24,16,'Tata Consultancy Services, Programmer Analyst Job Role','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0);
 /*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -840,4 +841,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-02 14:43:40
+-- Dump completed on 2022-04-02 15:29:03
