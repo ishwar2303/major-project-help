@@ -217,7 +217,7 @@ CREATE TABLE `exams` (
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +226,7 @@ CREATE TABLE `exams` (
 
 LOCK TABLES `exams` WRITE;
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-01 05:54:00',_binary '',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-03 15:10:00',_binary '\0',300,10,'2022-03-30 09:16:31');
+INSERT INTO `exams` VALUES (4,3,'ABC Exam','NA','Advance','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-28 09:45:00',_binary '\0',900,10,'2022-03-28 09:46:07'),(12,3,'Ishwar','NA','Intermediate','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '','2022-03-29 11:42:00',_binary '\0',900,90,'2022-03-29 11:42:52'),(14,3,'General Knowledge','ok','Beginner','NA',_binary '\0',_binary '\0',_binary '',900,_binary '\0',_binary '',_binary '\0','2022-04-05 10:02:00',_binary '\0',100,1,'2022-03-29 11:51:35'),(16,3,'Tata Consultancy Services, Programmer Analyst Job Role','NA','Beginner','NA',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','2022-04-04 12:02:00',_binary '\0',300,10,'2022-03-30 09:16:31'),(24,3,'Testing Exam 1.0','Description','Beginner','',_binary '',_binary '\0',_binary '',1800,_binary '\0',_binary '\0',_binary '\0','2022-04-05 16:43:00',_binary '',300,1,'2022-04-05 16:42:59');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,7 +246,7 @@ CREATE TABLE `McqAnswers` (
   KEY `optionId` (`optionId`),
   CONSTRAINT `mcqanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
   CONSTRAINT `mcqanswers_ibfk_2` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,34 +255,8 @@ CREATE TABLE `McqAnswers` (
 
 LOCK TABLES `McqAnswers` WRITE;
 /*!40000 ALTER TABLE `McqAnswers` DISABLE KEYS */;
+INSERT INTO `McqAnswers` VALUES (4,35,25),(5,36,26),(6,36,27),(7,36,28);
 /*!40000 ALTER TABLE `McqAnswers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `McqOptionImages`
---
-
-DROP TABLE IF EXISTS `McqOptionImages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `McqOptionImages` (
-  `imageId` bigint NOT NULL AUTO_INCREMENT,
-  `optionId` bigint NOT NULL,
-  `path` varchar(2100) NOT NULL,
-  `description` varchar(2000) DEFAULT NULL,
-  PRIMARY KEY (`imageId`),
-  KEY `optionId` (`optionId`),
-  CONSTRAINT `mcqoptionimages_ibfk_1` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `McqOptionImages`
---
-
-LOCK TABLES `McqOptionImages` WRITE;
-/*!40000 ALTER TABLE `McqOptionImages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `McqOptionImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -299,7 +273,7 @@ CREATE TABLE `McqOptions` (
   PRIMARY KEY (`optionId`),
   KEY `questionId` (`questionId`),
   CONSTRAINT `mcqoptions_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,6 +282,7 @@ CREATE TABLE `McqOptions` (
 
 LOCK TABLES `McqOptions` WRITE;
 /*!40000 ALTER TABLE `McqOptions` DISABLE KEYS */;
+INSERT INTO `McqOptions` VALUES (23,35,'Rahul'),(24,35,'Modi'),(25,35,'Piyush'),(26,36,'Rahul'),(27,36,'Modi'),(28,36,'Kejriwal'),(29,36,'Manmohan');
 /*!40000 ALTER TABLE `McqOptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -391,33 +366,6 @@ INSERT INTO `QuestionCategory` VALUES (1,'MCQ SC','Multiple choice questions, Si
 UNLOCK TABLES;
 
 --
--- Table structure for table `QuestionImages`
---
-
-DROP TABLE IF EXISTS `QuestionImages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `QuestionImages` (
-  `imageId` bigint NOT NULL AUTO_INCREMENT,
-  `questionId` bigint NOT NULL,
-  `path` varchar(2100) NOT NULL,
-  `description` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`imageId`),
-  KEY `questionId` (`questionId`),
-  CONSTRAINT `questionimages_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `QuestionImages`
---
-
-LOCK TABLES `QuestionImages` WRITE;
-/*!40000 ALTER TABLE `QuestionImages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `QuestionImages` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `QuestionNavigation`
 --
 
@@ -463,13 +411,13 @@ CREATE TABLE `Questions` (
   `score` double DEFAULT NULL,
   `negative` double DEFAULT NULL,
   `explanation` varchar(6000) DEFAULT NULL,
-  `questionTimer` bigint NOT NULL,
+  `timeDuration` bigint NOT NULL,
   PRIMARY KEY (`questionId`),
   KEY `sectionId` (`sectionId`),
   KEY `categoryId` (`categoryId`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE,
   CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `QuestionCategory` (`categoryId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -478,6 +426,7 @@ CREATE TABLE `Questions` (
 
 LOCK TABLES `Questions` WRITE;
 /*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
+INSERT INTO `Questions` VALUES (34,49,3,'Is Modi current pm of India?',10,5,'',0),(35,49,1,'Who is pm of India?',100,40,'',0),(36,49,2,'Who has potential to be next pm of India?',10,1,'',0);
 /*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -590,7 +539,7 @@ CREATE TABLE `Sections` (
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
   CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,7 +548,7 @@ CREATE TABLE `Sections` (
 
 LOCK TABLES `Sections` WRITE;
 /*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
-INSERT INTO `Sections` VALUES (20,14,'History 1.0','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(21,14,'Politics 1.0','NA',_binary '\0',0,_binary '',_binary '',_binary '',0),(22,14,'Geography 1.0','Na',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(24,16,'Tata Consultancy Services, Programmer Analyst Job Role','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0),(29,16,'Ishwar Baisla','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(30,16,'Piyush kumar','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0);
+INSERT INTO `Sections` VALUES (21,14,'Politics 1.0','NA',_binary '\0',0,_binary '',_binary '',_binary '',0),(22,14,'Geography','Na',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(24,16,'Tata Consultancy Services, Programmer Analyst Job Role','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0),(29,16,'Ishwar Baisla','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(30,16,'Piyush kumar','NA',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0),(42,14,'History 1.0','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0),(49,24,'Testing Section 1.0','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0);
 /*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -768,7 +717,7 @@ CREATE TABLE `TrueFalseAnswers` (
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   CONSTRAINT `truefalseanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -777,6 +726,7 @@ CREATE TABLE `TrueFalseAnswers` (
 
 LOCK TABLES `TrueFalseAnswers` WRITE;
 /*!40000 ALTER TABLE `TrueFalseAnswers` DISABLE KEYS */;
+INSERT INTO `TrueFalseAnswers` VALUES (5,34,_binary '');
 /*!40000 ALTER TABLE `TrueFalseAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -830,7 +780,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(48,3,'tapasbaranwal','23031999',_binary ''),(50,3,'jatin2303','23031999',_binary '\0');
+INSERT INTO `Users` VALUES (34,4,'ishwar2303','23031999',_binary ''),(35,4,'tapas1999','12345678',_binary '\0'),(36,4,'mp2022xx','12345678',_binary '\0'),(48,3,'tapasbaranwal','23031999',_binary '\0'),(50,3,'jatin2303','23031999',_binary '\0');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -843,4 +793,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04 10:57:08
+-- Dump completed on 2022-04-06  0:19:16
