@@ -15,6 +15,8 @@ GRANT ALL PRIVILEGES ON `quizwit`.`Exams` TO 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`Sections` TO 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`Questions` TO 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`TrueFalseAnswers` TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON `quizwit`.`McqOptions` TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON `quizwit`.`McqAnswers` TO 'admin'@'localhost';
 
 
 /* Student */
