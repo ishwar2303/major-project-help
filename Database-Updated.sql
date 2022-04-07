@@ -417,7 +417,7 @@ CREATE TABLE `Questions` (
   KEY `categoryId` (`categoryId`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE,
   CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `QuestionCategory` (`categoryId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -426,7 +426,7 @@ CREATE TABLE `Questions` (
 
 LOCK TABLES `Questions` WRITE;
 /*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
-INSERT INTO `Questions` VALUES (34,49,3,'Is Modi current pm of India?',10,5,'',0),(35,49,1,'Who is pm of India?',100,40,'',0),(36,49,2,'Who has potential to be next pm of India?',10,1,'',0);
+INSERT INTO `Questions` VALUES (34,49,3,'Is Modi current pm of India?',10,5,'',0),(35,49,1,'Who is pm of India?',100,40,'',0),(36,49,2,'Who has potential to be next pm of India?',10,1,'',0),(37,49,3,'The atomic number for lithium is 17',10,4,'',0),(38,49,3,'A cross between a horse and a zebra is called a \'Hobra\'',4,2,'',0),(39,49,3,'The black box in a plane is black',4,0,'',0),(40,49,3,'Prince Harry is taller than Prince William',4,1,'',0);
 /*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -717,7 +717,7 @@ CREATE TABLE `TrueFalseAnswers` (
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   CONSTRAINT `truefalseanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -726,7 +726,7 @@ CREATE TABLE `TrueFalseAnswers` (
 
 LOCK TABLES `TrueFalseAnswers` WRITE;
 /*!40000 ALTER TABLE `TrueFalseAnswers` DISABLE KEYS */;
-INSERT INTO `TrueFalseAnswers` VALUES (5,34,_binary '');
+INSERT INTO `TrueFalseAnswers` VALUES (5,34,_binary ''),(6,37,_binary ''),(7,38,_binary '\0'),(8,39,_binary ''),(9,40,_binary '');
 /*!40000 ALTER TABLE `TrueFalseAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -793,4 +793,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-06  0:19:16
+-- Dump completed on 2022-04-07 12:32:47
