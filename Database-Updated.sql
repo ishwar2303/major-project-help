@@ -31,7 +31,7 @@ CREATE TABLE `Administrators` (
   `isActive` bit(1) NOT NULL DEFAULT (1),
   PRIMARY KEY (`administratorId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `Administrators` (
 
 LOCK TABLES `Administrators` WRITE;
 /*!40000 ALTER TABLE `Administrators` DISABLE KEYS */;
+INSERT INTO `Administrators` VALUES (6,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary '');
 /*!40000 ALTER TABLE `Administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +60,7 @@ CREATE TABLE `AssignedRolesToUsers` (
   KEY `userId` (`userId`),
   CONSTRAINT `assignedrolestousers_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `UserRoles` (`roleId`) ON DELETE CASCADE,
   CONSTRAINT `assignedrolestousers_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=439 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=467 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,13 +188,13 @@ LOCK TABLES `DatabaseQueryAnswers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `exams`
+-- Table structure for table `Exams`
 --
 
-DROP TABLE IF EXISTS `exams`;
+DROP TABLE IF EXISTS `Exams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `exams` (
+CREATE TABLE `Exams` (
   `examId` bigint NOT NULL AUTO_INCREMENT,
   `administratorId` bigint NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -207,24 +208,25 @@ CREATE TABLE `exams` (
   `setSectionTimer` bit(1) NOT NULL,
   `sectionNavigation` bit(1) NOT NULL DEFAULT (1),
   `isDeleted` bit(1) NOT NULL DEFAULT (0),
-  `startTime` timestamp NULL DEFAULT NULL,
+  `startTime` varchar(30) NOT NULL,
   `isActive` bit(1) NOT NULL,
   `windowTime` int NOT NULL,
   `numberOfAttempts` int NOT NULL,
-  `timestamp` timestamp NOT NULL,
+  `timestamp` varchar(30) NOT NULL,
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `exams`
+-- Dumping data for table `Exams`
 --
 
-LOCK TABLES `exams` WRITE;
-/*!40000 ALTER TABLE `exams` DISABLE KEYS */;
-/*!40000 ALTER TABLE `exams` ENABLE KEYS */;
+LOCK TABLES `Exams` WRITE;
+/*!40000 ALTER TABLE `Exams` DISABLE KEYS */;
+INSERT INTO `Exams` VALUES (58,6,'General Knowledge','NA','Intermediate','',_binary '',_binary '\0',_binary '',10800,_binary '\0',_binary '\0',_binary '\0','1651309080000',_binary '\0',3600,2,'1650012745014'),(59,6,'Tata Consultancy Services','Questions based on Verbal ability, Reasoning, Programming and Aptitude.\r\nThis test is to check your overall problem solving skills.','Intermediate','Some instructions',_binary '\0',_binary '\0',_binary '\0',0,_binary '',_binary '\0',_binary '\0','1651149600000',_binary '\0',900,1,'1650013249984');
+/*!40000 ALTER TABLE `Exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -412,7 +414,7 @@ CREATE TABLE `Questions` (
   KEY `categoryId` (`categoryId`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE,
   CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`categoryId`) REFERENCES `QuestionCategory` (`categoryId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -421,6 +423,7 @@ CREATE TABLE `Questions` (
 
 LOCK TABLES `Questions` WRITE;
 /*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
+INSERT INTO `Questions` VALUES (64,69,3,'Abc',1,1,'',0),(65,69,3,'Abc',1,1,'',60),(66,69,3,'NA',1,1,'',120),(67,69,3,'NA',1,1,'',300),(68,69,3,'ABc',1,1,'',120);
 /*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -533,7 +536,7 @@ CREATE TABLE `Sections` (
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
   CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -542,6 +545,7 @@ CREATE TABLE `Sections` (
 
 LOCK TABLES `Sections` WRITE;
 /*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
+INSERT INTO `Sections` VALUES (66,59,'Verbal Ability','Questions based on verbal ability.',_binary '',900,_binary '\0',_binary '\0',_binary '\0',0),(67,59,'Quantitative','Questions based on Verbal ability, Reasoning, Programming and Aptitude. This test is to check your overall problem solving skills.',_binary '',900,_binary '\0',_binary '\0',_binary '',0),(68,59,'Programming','Question based on programming',_binary '',3600,_binary '\0',_binary '',_binary '',0),(69,59,'Database Query','Questions based on sql query.',_binary '\0',0,_binary '',_binary '\0',_binary '\0',0);
 /*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -655,7 +659,7 @@ CREATE TABLE `Students` (
   `isActive` bit(1) NOT NULL,
   PRIMARY KEY (`studentId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -664,6 +668,7 @@ CREATE TABLE `Students` (
 
 LOCK TABLES `Students` WRITE;
 /*!40000 ALTER TABLE `Students` DISABLE KEYS */;
+INSERT INTO `Students` VALUES (1,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary '');
 /*!40000 ALTER TABLE `Students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -710,7 +715,7 @@ CREATE TABLE `TrueFalseAnswers` (
   PRIMARY KEY (`answerId`),
   KEY `questionId` (`questionId`),
   CONSTRAINT `truefalseanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -719,6 +724,7 @@ CREATE TABLE `TrueFalseAnswers` (
 
 LOCK TABLES `TrueFalseAnswers` WRITE;
 /*!40000 ALTER TABLE `TrueFalseAnswers` DISABLE KEYS */;
+INSERT INTO `TrueFalseAnswers` VALUES (28,64,_binary ''),(29,65,_binary ''),(30,66,_binary ''),(31,67,_binary '\0'),(32,68,_binary '\0');
 /*!40000 ALTER TABLE `TrueFalseAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -763,7 +769,7 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`userId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -772,6 +778,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+INSERT INTO `Users` VALUES (65,6,'ishwar2303','12345678',_binary '\0');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -784,4 +791,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-11  5:49:57
+-- Dump completed on 2022-04-15 18:25:04
