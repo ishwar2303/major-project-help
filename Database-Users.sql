@@ -28,3 +28,4 @@ GRANT ALL PRIVILEGES ON `quizwit`.`Students` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`Attempts` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`SectionNavigation` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`QuestionNavigation` TO 'student'@'localhost';
+GRANT SELECT ON `quizwit`.`Questions` TO 'student'@'localhost';
