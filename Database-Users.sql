@@ -25,3 +25,4 @@ CREATE USER 'student'@'localhost' IDENTIFIED BY '23031999';
 SHOW GRANTS FOR 'student'@'localhost';
 
 GRANT ALL PRIVILEGES ON `quizwit`.`Students` TO 'student'@'localhost';
+GRANT ALL PRIVILEGES ON `quizwit`.`Attempts` TO 'student'@'localhost';
