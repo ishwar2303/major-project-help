@@ -30,3 +30,4 @@ GRANT ALL PRIVILEGES ON `quizwit`.`SectionNavigation` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`QuestionNavigation` TO 'student'@'localhost';
 GRANT SELECT ON `quizwit`.`Questions` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`StudentTrueFalseAnswers` TO 'student'@'localhost';
+GRANT ALL PRIVILEGES ON `quizwit`.`StudentMcqAnswers` TO 'student'@'localhost';
