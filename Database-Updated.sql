@@ -92,7 +92,7 @@ CREATE TABLE `Attempts` (
   KEY `examId` (`examId`),
   CONSTRAINT `attempts_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `Students` (`studentId`) ON DELETE CASCADE,
   CONSTRAINT `attempts_ibfk_2` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,6 @@ CREATE TABLE `Attempts` (
 
 LOCK TABLES `Attempts` WRITE;
 /*!40000 ALTER TABLE `Attempts` DISABLE KEYS */;
-INSERT INTO `Attempts` VALUES (105,1,58,_binary '\0',1650379229,1650368429,0);
 /*!40000 ALTER TABLE `Attempts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,6 +211,7 @@ CREATE TABLE `Exams` (
   `sectionNavigation` bit(1) NOT NULL DEFAULT (1),
   `isDeleted` bit(1) NOT NULL DEFAULT (0),
   `startTime` varchar(30) NOT NULL,
+  `endTime` varchar(30) NOT NULL,
   `isActive` bit(1) NOT NULL,
   `windowTime` int NOT NULL,
   `numberOfAttempts` int NOT NULL,
@@ -219,7 +219,7 @@ CREATE TABLE `Exams` (
   PRIMARY KEY (`examId`),
   KEY `administratorId` (`administratorId`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`administratorId`) REFERENCES `Administrators` (`administratorId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +228,7 @@ CREATE TABLE `Exams` (
 
 LOCK TABLES `Exams` WRITE;
 /*!40000 ALTER TABLE `Exams` DISABLE KEYS */;
-INSERT INTO `Exams` VALUES (58,6,'General Knowledge','NA','Intermediate','',_binary '\0',_binary '\0',_binary '',10800,_binary '\0',_binary '',_binary '\0','1650359760000',_binary '',36000,2,'1650012745014'),(59,6,'Tata Consultancy Services','Questions based on Verbal ability, Reasoning, Programming and Aptitude.\r\nThis test is to check your overall problem solving skills.','Intermediate','Some instructions',_binary '\0',_binary '\0',_binary '',3600,_binary '\0',_binary '\0',_binary '\0','1650225840000',_binary '',3600,1,'1650013249984');
+INSERT INTO `Exams` VALUES (58,6,'General Knowledge','NA','Intermediate','',_binary '\0',_binary '\0',_binary '\0',0,_binary '',_binary '\0',_binary '\0','1650538800000','1650544800000',_binary '',36000,2,'1650012745014'),(59,6,'Tata Consultancy Services','Questions based on Verbal ability, Reasoning, Programming and Aptitude.\r\nThis test is to check your overall problem solving skills.','Intermediate','Some instructions',_binary '\0',_binary '\0',_binary '',3600,_binary '\0',_binary '\0',_binary '\0','1650537000000','1650540600000',_binary '\0',3600,1,'1650013249984'),(60,6,'C Programming','Questions based on C language.','Beginner','',_binary '\0',_binary '\0',_binary '\0',0,_binary '',_binary '\0',_binary '\0','1650537000000','1650546000000',_binary '\0',3600,2,'1650535690643');
 /*!40000 ALTER TABLE `Exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +248,7 @@ CREATE TABLE `McqAnswers` (
   KEY `optionId` (`optionId`),
   CONSTRAINT `mcqanswers_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
   CONSTRAINT `mcqanswers_ibfk_2` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -257,7 +257,7 @@ CREATE TABLE `McqAnswers` (
 
 LOCK TABLES `McqAnswers` WRITE;
 /*!40000 ALTER TABLE `McqAnswers` DISABLE KEYS */;
-INSERT INTO `McqAnswers` VALUES (55,82,116),(56,83,121),(58,84,128),(59,85,132),(65,91,160),(66,92,164),(67,93,168),(69,90,176),(70,89,182),(71,88,186),(72,87,190),(73,86,192),(74,94,196),(75,94,199),(76,95,203),(77,96,207);
+INSERT INTO `McqAnswers` VALUES (65,91,160),(66,92,164),(67,93,168),(69,90,176),(70,89,182),(71,88,186),(72,87,190),(78,94,208),(79,94,211),(80,95,215),(81,96,219),(82,86,220),(84,85,228),(85,84,232),(86,83,237),(87,82,240);
 /*!40000 ALTER TABLE `McqAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,7 +275,7 @@ CREATE TABLE `McqOptions` (
   PRIMARY KEY (`optionId`),
   KEY `questionId` (`questionId`),
   CONSTRAINT `mcqoptions_ibfk_1` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=208 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=244 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -284,7 +284,7 @@ CREATE TABLE `McqOptions` (
 
 LOCK TABLES `McqOptions` WRITE;
 /*!40000 ALTER TABLE `McqOptions` DISABLE KEYS */;
-INSERT INTO `McqOptions` VALUES (116,82,'1757'),(117,82,'1782'),(118,82,'1748'),(119,82,'1764'),(120,83,'Sutlej and Beas'),(121,83,'Jhelum and Chenab'),(122,83,'Ravi and Chenab'),(123,83,'Ganga and Yamuna'),(128,84,'military affairs'),(129,84,'the state treasury'),(130,84,'the royal household'),(131,84,'the land revenue system'),(132,85,'Buddhists'),(133,85,'Hindus'),(134,85,'Jains'),(135,85,'None of the above'),(157,91,'Ganga'),(158,91,'Cauvery'),(159,91,'Narmada'),(160,91,'Godavari'),(161,92,'north of Tropic of Cancer'),(162,92,'south of the Equator'),(163,92,'south of the Capricorn'),(164,92,'north of the Equator'),(165,93,'I and II'),(166,93,'I, II and III'),(167,93,'I, III and IV'),(168,93,'I, II and IV'),(175,90,'Tin'),(176,90,'Mercury'),(177,90,'Lead'),(178,90,'Zinc'),(179,90,'Magnesium'),(180,90,'Copper'),(181,89,'copper'),(182,89,'magnesium'),(183,89,'iron'),(184,89,'calcium'),(185,88,'Phosphorous'),(186,88,'Bromine'),(187,88,'Chlorine'),(188,88,'Helium'),(189,87,'Oxygen'),(190,87,'Hydrogen sulphide'),(191,87,'Carbon dioxide'),(192,86,'Nirvana'),(193,86,'Sangha'),(194,86,'Buddha'),(195,86,'Dhamma'),(196,94,'molality'),(197,94,'morality'),(198,94,'normality'),(199,94,'formality'),(200,95,'electrons and neutrons'),(201,95,'electrons and protons'),(202,95,'protons and neutrons'),(203,95,'All of the above'),(204,96,'Na'),(205,96,'Ag'),(206,96,'Hg'),(207,96,'Fe');
+INSERT INTO `McqOptions` VALUES (157,91,'Ganga'),(158,91,'Cauvery'),(159,91,'Narmada'),(160,91,'Godavari'),(161,92,'north of Tropic of Cancer'),(162,92,'south of the Equator'),(163,92,'south of the Capricorn'),(164,92,'north of the Equator'),(165,93,'I and II'),(166,93,'I, II and III'),(167,93,'I, III and IV'),(168,93,'I, II and IV'),(175,90,'Tin'),(176,90,'Mercury'),(177,90,'Lead'),(178,90,'Zinc'),(179,90,'Magnesium'),(180,90,'Copper'),(181,89,'copper'),(182,89,'magnesium'),(183,89,'iron'),(184,89,'calcium'),(185,88,'Phosphorous'),(186,88,'Bromine'),(187,88,'Chlorine'),(188,88,'Helium'),(189,87,'Oxygen'),(190,87,'Hydrogen sulphide'),(191,87,'Carbon dioxide'),(208,94,'molality'),(209,94,'morality'),(210,94,'normality'),(211,94,'formality'),(212,95,'electrons and neutrons'),(213,95,'electrons and protons'),(214,95,'protons and neutrons'),(215,95,'All of the above'),(216,96,'Na'),(217,96,'Ag'),(218,96,'Hg'),(219,96,'Fe'),(220,86,'Nirvana'),(221,86,'Sangha'),(222,86,'Buddha'),(223,86,'Dhamma'),(228,85,'Buddhists'),(229,85,'Hindus'),(230,85,'Jains'),(231,85,'None of the above'),(232,84,'military affairs'),(233,84,'the state treasury'),(234,84,'the royal household'),(235,84,'the land revenue system'),(236,83,'Sutlej and Beas'),(237,83,'Jhelum and Chenab'),(238,83,'Ravi and Chenab'),(239,83,'Ganga and Yamuna'),(240,82,'1757'),(241,82,'1782'),(242,82,'1748'),(243,82,'1764');
 /*!40000 ALTER TABLE `McqOptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -389,7 +389,7 @@ CREATE TABLE `QuestionNavigation` (
   KEY `questionId` (`questionId`),
   CONSTRAINT `questionnavigation_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `questionnavigation_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2257 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,7 +398,6 @@ CREATE TABLE `QuestionNavigation` (
 
 LOCK TABLES `QuestionNavigation` WRITE;
 /*!40000 ALTER TABLE `QuestionNavigation` DISABLE KEYS */;
-INSERT INTO `QuestionNavigation` VALUES (1193,105,100,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1194,105,98,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1195,105,97,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1196,105,99,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1197,105,95,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1198,105,96,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1199,105,94,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1200,105,92,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1201,105,93,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1202,105,91,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1203,105,87,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1204,105,88,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1205,105,90,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1206,105,89,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1207,105,82,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1208,105,86,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1209,105,83,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1210,105,84,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0),(1211,105,85,_binary '',-1,_binary '\0',_binary '\0',_binary '\0',0);
 /*!40000 ALTER TABLE `QuestionNavigation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -432,7 +431,7 @@ CREATE TABLE `Questions` (
 
 LOCK TABLES `Questions` WRITE;
 /*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
-INSERT INTO `Questions` VALUES (64,69,3,'Abc',1,1,'',0),(65,69,3,'Abc',1,1,'',0),(66,69,3,'NA',1,1,'',0),(67,69,3,'NA',1,1,'',0),(68,69,3,'Who is the first prime minister of India?',1,1,'',0),(69,68,3,'ABaC',1,1,'',0),(70,67,3,'ABC',1,1,'',0),(71,66,3,'ABC',1,1,'',0),(72,68,3,'Piyush',1,1,'',0),(73,68,3,'Ishwar',1,1,'',0),(74,68,3,'Tapas',1,1,'',0),(75,67,3,'ABC',1,1,'',0),(76,67,3,'OMG',1,1,'',0),(77,67,3,'WHat',1,1,'',0),(78,66,3,'AB',1,1,'',0),(79,66,3,'OK',1,1,'',0),(82,70,1,'The Battle of Plassey was fought in',2,1,'',0),(83,70,1,'The territory of Porus who offered strong resistance to Alexander was situated between the rivers of',2,1,'',0),(84,70,1,'Under Akbar, the Mir Bakshi was required to look after',2,1,'The head of the military was called the Mir Bakshi, appointed from among the leading nobles of the court. The Mir Bakshi was in charge of intelligence gathering, and also made recommendations to the emperor for military appointments and promotions.',0),(85,70,1,'Tripitakas are sacred books of',2,1,'',0),(86,70,1,'# The trident-shaped symbol of Buddhism does not represent',2,1,'',0),(87,71,1,'Brass gets discoloured in air because of the presence of which of the following gases in air?',1,0,'',0),(88,71,1,'Which of the following is a non metal that remains liquid at room temperature?',2,1,'',0),(89,71,1,'Chlorophyll is a naturally occurring chelate compound in which central metal is',2,1,'',0),(90,71,1,'Which of the following metals forms an amalgam with other metals?',3,1,'',0),(91,72,1,'The Paithan (Jayakwadi) Hydro-electric project, completed with the help of Japan, is on the river',2,1,'',0),(92,72,1,'The southernmost point of peninsular India, that is, Kanyakumari, is',2,1,'',0),(93,72,1,'Which of the following factors are responsible for the rapid growth of sugar production in south India as compared to north India?\r\n\r\nI. Higher per acre field of sugarcane\r\nII. Higher sucrose content of sugarcane\r\nIII. Lower labour cost\r\nIV. Longer crushing period',5,2,'',0),(94,73,2,'The number of moles of solute present in 1 kg of a solvent is called its',4,1,'',0),(95,73,2,'The nucleus of an atom consists of',4,1,'',0),(96,73,2,'The metal used to recover copper from a solution of copper sulphate is',4,1,'',0),(97,74,3,'There are tools to help you monitor your competitor’s marketing efforts.',1,0,'',0),(98,74,3,'Facebook is not as popular as it used to be, it’s losing its audiences.',1,0,'',0),(99,74,3,'KPI stands for Key Performance Indicator.',1,0,'',0),(100,74,3,'A rich snippet is a strategic section on your website that includes a video or infographic.',1,0,'',0);
+INSERT INTO `Questions` VALUES (64,69,3,'Abc',1,1,'',0),(65,69,3,'Abc',1,1,'',0),(66,69,3,'NA',1,1,'',0),(67,69,3,'NA',1,1,'',0),(68,69,3,'Who is the first prime minister of India?',1,1,'',0),(69,68,3,'ABaC',1,1,'',0),(70,67,3,'ABC',1,1,'',0),(71,66,3,'ABC',1,1,'',0),(72,68,3,'Piyush',1,1,'',0),(73,68,3,'Ishwar',1,1,'',0),(74,68,3,'Tapas',1,1,'',0),(75,67,3,'ABC',1,1,'',0),(76,67,3,'OMG',1,1,'',0),(77,67,3,'WHat',1,1,'',0),(78,66,3,'AB',1,1,'',0),(79,66,3,'OK',1,1,'',0),(82,70,1,'The Battle of Plassey was fought in',2,1,'',10),(83,70,1,'The territory of Porus who offered strong resistance to Alexander was situated between the rivers of',2,1,'',10),(84,70,1,'Under Akbar, the Mir Bakshi was required to look after',2,1,'The head of the military was called the Mir Bakshi, appointed from among the leading nobles of the court. The Mir Bakshi was in charge of intelligence gathering, and also made recommendations to the emperor for military appointments and promotions.',10),(85,70,1,'Tripitakas are sacred books of',2,1,'',10),(86,70,1,'### The trident-shaped symbol of Buddhism does not represent',2,1,'',20),(87,71,1,'Brass gets discoloured in air because of the presence of which of the following gases in air?',1,0,'',0),(88,71,1,'Which of the following is a non metal that remains liquid at room temperature?',2,1,'',0),(89,71,1,'Chlorophyll is a naturally occurring chelate compound in which central metal is',2,1,'',0),(90,71,1,'Which of the following metals forms an amalgam with other metals?',3,1,'',0),(91,72,1,'The Paithan (Jayakwadi) Hydro-electric project, completed with the help of Japan, is on the river',2,1,'',0),(92,72,1,'The southernmost point of peninsular India, that is, Kanyakumari, is',2,1,'',0),(93,72,1,'Which of the following factors are responsible for the rapid growth of sugar production in south India as compared to north India?\r\n\r\nI. Higher per acre field of sugarcane\r\nII. Higher sucrose content of sugarcane\r\nIII. Lower labour cost\r\nIV. Longer crushing period',5,2,'',0),(94,73,2,'The number of moles of solute present in 1 kg of a solvent is called its',4,1,'',10),(95,73,2,'The nucleus of an atom consists of',4,1,'',10),(96,73,2,'The metal used to recover copper from a solution of copper sulphate is',4,1,'',10),(97,74,3,'There are tools to help you monitor your competitor’s marketing efforts.',1,0,'',0),(98,74,3,'Facebook is not as popular as it used to be, it’s losing its audiences.',1,0,'',0),(99,74,3,'KPI stands for Key Performance Indicator.',1,0,'',0),(100,74,3,'A rich snippet is a strategic section on your website that includes a video or infographic.',1,0,'',0);
 /*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -514,7 +513,7 @@ CREATE TABLE `SectionNavigation` (
   KEY `sectionId` (`sectionId`),
   CONSTRAINT `sectionnavigation_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `sectionnavigation_ibfk_2` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=595 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -523,7 +522,6 @@ CREATE TABLE `SectionNavigation` (
 
 LOCK TABLES `SectionNavigation` WRITE;
 /*!40000 ALTER TABLE `SectionNavigation` DISABLE KEYS */;
-INSERT INTO `SectionNavigation` VALUES (315,105,74,_binary '',-1,_binary '\0',0),(316,105,73,_binary '',-1,_binary '\0',0),(317,105,72,_binary '',-1,_binary '\0',0),(318,105,71,_binary '',-1,_binary '\0',0),(319,105,70,_binary '',-1,_binary '\0',0);
 /*!40000 ALTER TABLE `SectionNavigation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -548,7 +546,7 @@ CREATE TABLE `Sections` (
   PRIMARY KEY (`sectionId`),
   KEY `examId` (`examId`),
   CONSTRAINT `sections_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -557,7 +555,7 @@ CREATE TABLE `Sections` (
 
 LOCK TABLES `Sections` WRITE;
 /*!40000 ALTER TABLE `Sections` DISABLE KEYS */;
-INSERT INTO `Sections` VALUES (66,59,'Verbal Ability','Questions based on verbal ability.',_binary '\0',0,_binary '\0',_binary '\0',_binary '\0',0),(67,59,'Quantitative','Questions based on Verbal ability, Reasoning, Programming and Aptitude. This test is to check your overall problem solving skills.',_binary '\0',0,_binary '\0',_binary '\0',_binary '',0),(68,59,'Programming','Question based on programming',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(69,59,'Database Query SQL, MySQL, Postgress, MongoDB','Questions based on sql query.',_binary '\0',0,_binary '\0',_binary '\0',_binary '',0),(70,58,'Indian History','NA',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(71,58,'General Science','NA',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(72,58,'Indian Geography','NA',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(73,58,'Chemistry','NA',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(74,58,'Marketing','NA',_binary '\0',0,_binary '\0',_binary '',_binary '',0);
+INSERT INTO `Sections` VALUES (66,59,'Verbal Ability','Questions based on verbal ability.',_binary '\0',0,_binary '\0',_binary '\0',_binary '\0',0),(67,59,'Quantitative','Questions based on Verbal ability, Reasoning, Programming and Aptitude. This test is to check your overall problem solving skills.',_binary '\0',0,_binary '\0',_binary '\0',_binary '',0),(68,59,'Programming','Question based on programming',_binary '\0',0,_binary '\0',_binary '',_binary '',0),(69,59,'Database Query SQL, MySQL, Postgress, MongoDB','Questions based on sql query.',_binary '\0',0,_binary '\0',_binary '\0',_binary '',0),(70,58,'Indian History','NA',_binary '\0',0,_binary '',_binary '\0',_binary '',0),(71,58,'General Science','NA',_binary '',1800,_binary '\0',_binary '',_binary '',0),(72,58,'Indian Geography','NA',_binary '',2700,_binary '\0',_binary '',_binary '',0),(73,58,'Chemistry','NA',_binary '\0',0,_binary '',_binary '\0',_binary '',0),(74,58,'Marketing','NA',_binary '',900,_binary '\0',_binary '',_binary '',0),(75,60,'Multiple Choice Questions','NA',_binary '',3600,_binary '\0',_binary '',_binary '',0),(76,60,'Guess Output','NA',_binary '',3600,_binary '\0',_binary '\0',_binary '\0',0),(77,60,'True or False','NA',_binary '',1800,_binary '\0',_binary '\0',_binary '\0',0);
 /*!40000 ALTER TABLE `Sections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -674,7 +672,7 @@ CREATE TABLE `StudentMcqAnswers` (
   CONSTRAINT `studentmcqanswers_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `studentmcqanswers_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
   CONSTRAINT `studentmcqanswers_ibfk_3` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -732,7 +730,7 @@ CREATE TABLE `StudentTrueFalseAnswers` (
   KEY `questionId` (`questionId`),
   CONSTRAINT `studenttruefalseanswers_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `studenttruefalseanswers_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -834,4 +832,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-19 20:55:36
+-- Dump completed on 2022-04-21 17:58:45
