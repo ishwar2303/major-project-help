@@ -15,6 +15,7 @@ npm install crossfilter
 npm install highcharts
 npm install react-syntax-highlighter --save
 npm install react-ace ace-builds
+npm install react-markdown-editor-smde --save
 ```
 
 ### Configure react app after fork from github
