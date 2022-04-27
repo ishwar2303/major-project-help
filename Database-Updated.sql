@@ -92,7 +92,7 @@ CREATE TABLE `Attempts` (
   KEY `examId` (`examId`),
   CONSTRAINT `attempts_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `Students` (`studentId`) ON DELETE CASCADE,
   CONSTRAINT `attempts_ibfk_2` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `Attempts` (
 
 LOCK TABLES `Attempts` WRITE;
 /*!40000 ALTER TABLE `Attempts` DISABLE KEYS */;
-INSERT INTO `Attempts` VALUES (193,1,58,_binary '',1650969370,1650967570,1650967866);
+INSERT INTO `Attempts` VALUES (193,1,58,_binary '',1650969370,1650967570,1650967866),(194,1,58,_binary '',1651089777,1651087977,1651088072);
 /*!40000 ALTER TABLE `Attempts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +229,7 @@ CREATE TABLE `Exams` (
 
 LOCK TABLES `Exams` WRITE;
 /*!40000 ALTER TABLE `Exams` DISABLE KEYS */;
-INSERT INTO `Exams` VALUES (58,6,'General Knowledge','NA','Intermediate','',_binary '\0',_binary '\0',_binary '',1800,_binary '\0',_binary '\0',_binary '\0','1650957060000','1651062600000',_binary '',36000,10,'1650012745014'),(59,6,'Tata Consultancy Services','Questions based on Verbal ability, Reasoning, Programming and Aptitude.\r\nThis test is to check your overall problem solving skills.','Intermediate','Some instructions',_binary '\0',_binary '\0',_binary '',3600,_binary '\0',_binary '\0',_binary '\0','1650965100000','1651039920000',_binary '',3600,5,'1650013249984'),(60,6,'C Programming','Questions based on C language.','Beginner','',_binary '\0',_binary '\0',_binary '\0',0,_binary '',_binary '\0',_binary '\0','1650537000000','1650546000000',_binary '\0',3600,2,'1650535690643');
+INSERT INTO `Exams` VALUES (58,6,'General Knowledge','NA','Intermediate','',_binary '',_binary '\0',_binary '',1800,_binary '\0',_binary '\0',_binary '\0','1651087920000','1651235400000',_binary '',36000,10,'1650012745014'),(59,6,'Tata Consultancy Services','Questions based on Verbal ability, Reasoning, Programming and Aptitude.\r\nThis test is to check your overall problem solving skills.','Intermediate','Some instructions',_binary '\0',_binary '\0',_binary '',3600,_binary '\0',_binary '\0',_binary '\0','1651051500000','1651083120000',_binary '',3600,5,'1650013249984'),(60,6,'C Programming','Questions based on C language.','Beginner','',_binary '\0',_binary '\0',_binary '\0',0,_binary '',_binary '\0',_binary '\0','1651141800000','1651165200000',_binary '\0',300,1,'1650535690643');
 /*!40000 ALTER TABLE `Exams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -390,7 +390,7 @@ CREATE TABLE `QuestionNavigation` (
   KEY `questionId` (`questionId`),
   CONSTRAINT `questionnavigation_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `questionnavigation_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2876 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2895 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -399,7 +399,7 @@ CREATE TABLE `QuestionNavigation` (
 
 LOCK TABLES `QuestionNavigation` WRITE;
 /*!40000 ALTER TABLE `QuestionNavigation` DISABLE KEYS */;
-INSERT INTO `QuestionNavigation` VALUES (2857,193,97,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2858,193,99,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2859,193,100,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2860,193,98,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2861,193,94,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2862,193,95,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2863,193,96,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2864,193,91,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2865,193,93,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2866,193,92,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2867,193,88,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2868,193,87,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2869,193,89,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2870,193,90,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2871,193,82,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2872,193,83,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2873,193,85,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2874,193,84,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2875,193,86,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0);
+INSERT INTO `QuestionNavigation` VALUES (2857,193,97,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2858,193,99,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2859,193,100,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2860,193,98,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2861,193,94,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2862,193,95,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2863,193,96,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2864,193,91,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2865,193,93,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2866,193,92,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2867,193,88,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2868,193,87,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2869,193,89,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2870,193,90,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2871,193,82,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2872,193,83,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2873,193,85,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2874,193,84,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2875,193,86,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2876,194,100,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2877,194,97,_binary '\0',-1,_binary '\0',_binary '\0',_binary '\0',0),(2878,194,98,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2879,194,99,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2880,194,95,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2881,194,94,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2882,194,96,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2883,194,91,_binary '\0',-1,_binary '\0',_binary '\0',_binary '\0',0),(2884,194,93,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2885,194,92,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2886,194,90,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2887,194,89,_binary '\0',-1,_binary '\0',_binary '\0',_binary '\0',0),(2888,194,87,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2889,194,88,_binary '\0',-1,_binary '\0',_binary '\0',_binary '\0',0),(2890,194,82,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2891,194,83,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2892,194,84,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2893,194,85,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0),(2894,194,86,_binary '\0',-1,_binary '\0',_binary '',_binary '\0',0);
 /*!40000 ALTER TABLE `QuestionNavigation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -515,7 +515,7 @@ CREATE TABLE `SectionNavigation` (
   KEY `sectionId` (`sectionId`),
   CONSTRAINT `sectionnavigation_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `sectionnavigation_ibfk_2` FOREIGN KEY (`sectionId`) REFERENCES `Sections` (`sectionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=758 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=763 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -524,7 +524,7 @@ CREATE TABLE `SectionNavigation` (
 
 LOCK TABLES `SectionNavigation` WRITE;
 /*!40000 ALTER TABLE `SectionNavigation` DISABLE KEYS */;
-INSERT INTO `SectionNavigation` VALUES (753,193,74,_binary '\0',-1,_binary '',1650967655),(754,193,73,_binary '\0',-1,_binary '',1650967714),(755,193,72,_binary '\0',-1,_binary '',1650967747),(756,193,71,_binary '\0',-1,_binary '',1650967802),(757,193,70,_binary '\0',-1,_binary '\0',0);
+INSERT INTO `SectionNavigation` VALUES (753,193,74,_binary '\0',-1,_binary '',1650967655),(754,193,73,_binary '\0',-1,_binary '',1650967714),(755,193,72,_binary '\0',-1,_binary '',1650967747),(756,193,71,_binary '\0',-1,_binary '',1650967802),(757,193,70,_binary '\0',-1,_binary '\0',0),(758,194,74,_binary '\0',-1,_binary '',1651087996),(759,194,73,_binary '\0',-1,_binary '',1651088014),(760,194,72,_binary '\0',-1,_binary '',1651088031),(761,194,71,_binary '\0',-1,_binary '',1651088045),(762,194,70,_binary '\0',-1,_binary '\0',0);
 /*!40000 ALTER TABLE `SectionNavigation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -670,7 +670,7 @@ CREATE TABLE `StudentGroupOfExam` (
   PRIMARY KEY (`groupId`),
   KEY `examId` (`examId`),
   CONSTRAINT `studentgroupofexam_ibfk_1` FOREIGN KEY (`examId`) REFERENCES `Exams` (`examId`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,6 +679,7 @@ CREATE TABLE `StudentGroupOfExam` (
 
 LOCK TABLES `StudentGroupOfExam` WRITE;
 /*!40000 ALTER TABLE `StudentGroupOfExam` DISABLE KEYS */;
+INSERT INTO `StudentGroupOfExam` VALUES (8,'ishwar2303@gmail.com',58),(9,'ishwar2303@gmail.com',59);
 /*!40000 ALTER TABLE `StudentGroupOfExam` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -701,7 +702,7 @@ CREATE TABLE `StudentMcqAnswers` (
   CONSTRAINT `studentmcqanswers_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `studentmcqanswers_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE,
   CONSTRAINT `studentmcqanswers_ibfk_3` FOREIGN KEY (`optionId`) REFERENCES `McqOptions` (`optionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=431 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=444 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -710,7 +711,7 @@ CREATE TABLE `StudentMcqAnswers` (
 
 LOCK TABLES `StudentMcqAnswers` WRITE;
 /*!40000 ALTER TABLE `StudentMcqAnswers` DISABLE KEYS */;
-INSERT INTO `StudentMcqAnswers` VALUES (415,193,94,252),(416,193,94,255),(417,193,95,251),(418,193,96,247),(419,193,91,160),(420,193,93,168),(421,193,92,164),(422,193,88,186),(423,193,87,190),(424,193,89,182),(425,193,90,176),(426,193,82,264),(427,193,83,261),(428,193,85,228),(429,193,84,256),(430,193,86,268);
+INSERT INTO `StudentMcqAnswers` VALUES (415,193,94,252),(416,193,94,255),(417,193,95,251),(418,193,96,247),(419,193,91,160),(420,193,93,168),(421,193,92,164),(422,193,88,186),(423,193,87,190),(424,193,89,182),(425,193,90,176),(426,193,82,264),(427,193,83,261),(428,193,85,228),(429,193,84,256),(430,193,86,268),(431,194,95,251),(432,194,94,253),(433,194,94,255),(434,194,96,247),(435,194,93,166),(436,194,92,164),(437,194,90,176),(438,194,87,190),(439,194,82,264),(440,194,83,262),(441,194,84,258),(442,194,85,228),(443,194,86,268);
 /*!40000 ALTER TABLE `StudentMcqAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -730,7 +731,7 @@ CREATE TABLE `Students` (
   `isActive` bit(1) NOT NULL,
   PRIMARY KEY (`studentId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -739,7 +740,7 @@ CREATE TABLE `Students` (
 
 LOCK TABLES `Students` WRITE;
 /*!40000 ALTER TABLE `Students` DISABLE KEYS */;
-INSERT INTO `Students` VALUES (1,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary '');
+INSERT INTO `Students` VALUES (1,'Ishwar Baisla','ishwar2303@gmail.com',9821671707,'23031999',_binary ''),(2,'Tapas Baranwal','tapasbaranwal@gmail.com',9821671707,'23031999',_binary '');
 /*!40000 ALTER TABLE `Students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -760,7 +761,7 @@ CREATE TABLE `StudentTrueFalseAnswers` (
   KEY `questionId` (`questionId`),
   CONSTRAINT `studenttruefalseanswers_ibfk_1` FOREIGN KEY (`attemptId`) REFERENCES `Attempts` (`attemptId`) ON DELETE CASCADE,
   CONSTRAINT `studenttruefalseanswers_ibfk_2` FOREIGN KEY (`questionId`) REFERENCES `Questions` (`questionId`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -769,7 +770,7 @@ CREATE TABLE `StudentTrueFalseAnswers` (
 
 LOCK TABLES `StudentTrueFalseAnswers` WRITE;
 /*!40000 ALTER TABLE `StudentTrueFalseAnswers` DISABLE KEYS */;
-INSERT INTO `StudentTrueFalseAnswers` VALUES (151,193,97,'TRUE'),(152,193,99,'TRUE'),(153,193,100,'FALSE'),(154,193,98,'TRUE');
+INSERT INTO `StudentTrueFalseAnswers` VALUES (151,193,97,'TRUE'),(152,193,99,'TRUE'),(153,193,100,'FALSE'),(154,193,98,'TRUE'),(155,194,100,'TRUE'),(156,194,98,'TRUE'),(157,194,99,'TRUE');
 /*!40000 ALTER TABLE `StudentTrueFalseAnswers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -863,4 +864,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-26 16:35:11
+-- Dump completed on 2022-04-28  2:19:06
