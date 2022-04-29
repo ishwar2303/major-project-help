@@ -34,3 +34,4 @@ GRANT SELECT ON `quizwit`.`Questions` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`StudentTrueFalseAnswers` TO 'student'@'localhost';
 GRANT ALL PRIVILEGES ON `quizwit`.`StudentMcqAnswers` TO 'student'@'localhost';
 GRANT SELECT ON `quizwit`.`Exams` TO 'student'@'localhost';
+GRANT SELECT ON `quizwit`.`StudentGroupOfExam` TO 'student'@'localhost';
